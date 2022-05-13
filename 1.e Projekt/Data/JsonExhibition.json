@@ -1,0 +1,29 @@
+{
+  "1": {
+
+    "ExhibitionId": 1,
+    "ExhibitionName": "Rockens opstart",
+    "ImageName": "..."
+
+  },
+  "2": {
+
+    "ExhibitionId": 2,
+    "ExhibitionName": "Musik før 2.Verdenskrig",
+    "ImageName": "..."
+
+  },
+  "3": {
+
+    "ExhibitionId": 3,
+    "ExhibitionName": "Protestmusikken i 60'erne",
+    "ImageName": "..."
+   
+  },
+  "4": {
+    "ExhibitionId": 3,
+    "ExhibitionName": "Stoffers indflydelse på musik ",
+    "ImageName": "..."
+  }
+
+  }

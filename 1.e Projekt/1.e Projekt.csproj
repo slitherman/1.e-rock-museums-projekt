@@ -6,8 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Data\" />
     <Folder Include="Interfaces\" />
+    <Folder Include="wwwroot\Pictures\" />
   </ItemGroup>
 
   <ItemGroup>

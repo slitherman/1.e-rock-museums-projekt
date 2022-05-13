@@ -11,7 +11,8 @@ namespace _1.e_Projekt.Services
         private Dictionary<int, Exhibition> Exhibitions { get; set; }
         public int ExhibitionId { get; set; }
         public string ExhibitionName { get; set; }
-       
+
+        public string ImageName { get; set; }
 
         public Exhibition()
         {
