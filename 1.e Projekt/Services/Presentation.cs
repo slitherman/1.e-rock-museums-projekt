@@ -13,9 +13,7 @@ namespace _1.e_Projekt.Services
         public string PresentationName { get;  private set; }
         public int PresentationId { get; private set; }
 
-        //ikke sikker på at jeg kommer til at bruge denne prop. Hvis så læs mere om Xamarin.Forms.Husk Xamarin.Forms bruges som regel til mobil dev.
-
-        //public Button MyProperty { get; set; }
+    
 
         public Presentation()
         {
