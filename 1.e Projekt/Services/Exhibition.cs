@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Authorization;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -29,22 +30,22 @@ namespace _1.e_Projekt.Services
 
         }
 
-        // er ikk helt sikker på hvad at dette gør
-        //public Dictionary<int, Exhibition> GetExhibitions()
-        //{
-        //    return Exhibitions;
-        //}
+       
+        public Dictionary<int, Exhibition> GetExhibitions()
+        {
+           return Exhibitions;
+        }
 
         public Exhibition GetExhibition(int id)
         {
             return Exhibitions[id];
         }
-
-        public void DeleteExhibition ()
+        [Authorize]
+        public void DeleteExhibition (int id)
         {
-            Exhibitions.Remove(ExhibitionId);
+            Exhibitions.Remove(id);
         }
-
+        [Authorize]
         public void AddExhibition(Exhibition ex)
         {
             if(!Exhibitions.Keys.Contains(ExhibitionId))
@@ -52,14 +53,16 @@ namespace _1.e_Projekt.Services
                 Exhibitions.Add(ExhibitionId, ex);
             }
         }
-        public void UpdateExhibition ()
+        [Authorize]
+        public void UpdateExhibition (Exhibition ex)
         {
-            foreach (var id in Exhibitions)
+            foreach (var id in Exhibitions.Values)
             {
-                if(id.Equals(ExhibitionId))
+                if(id.ExhibitionId.Equals(ex.ExhibitionId))
                 {
-                    ExhibitionId = ExhibitionId;
-                    ExhibitionName = ExhibitionName;
+                    id.ExhibitionId = ex.ExhibitionId;
+                    id.ExhibitionName = ex.ExhibitionName;
+                    id.ImageName = ex.ImageName;
                 }
             }
         }

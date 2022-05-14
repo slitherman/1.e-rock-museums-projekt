@@ -18,12 +18,11 @@
     "ExhibitionId": 3,
     "ExhibitionName": "Protestmusikken i 60'erne",
     "ImageName": "Protest"
-   
+
   },
   "4": {
     "ExhibitionId": 3,
     "ExhibitionName": "Stoffers indflydelse på musik ",
-    "ImageName": "Woodstock"
+    "ImageName": "."
   }
-
-  }
+}
