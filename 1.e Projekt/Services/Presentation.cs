@@ -12,8 +12,8 @@ namespace _1.e_Projekt.Services
     {
     public Dictionary<int, Presentation> Presentations { get; set; }
      
-       public string PresentationName { get;  private set; }
-       public int PresentationId { get; private set; }
+       public string PresentationName { get;  set; }
+       public int PresentationId { get;  set; }
        public string ImageName { get; set; }
 
 
@@ -49,7 +49,7 @@ namespace _1.e_Projekt.Services
         [Authorize]
         public void AddPresentation(Presentation pre)
        {
-           if(!Presentations.Keys.Contains(ExhibitionId))
+           if(!Presentations.Keys.Contains(pre.ExhibitionId))
           {
                Presentations.Add(PresentationId, pre);
            }
@@ -59,12 +59,16 @@ namespace _1.e_Projekt.Services
        {
           foreach (var id in Presentations.Values)
             {
-             if(id.ExhibitionId.Equals(PresentationId))
+                if (id.PresentationId.Equals(pre.PresentationId))
              {
-                  PresentationId = PresentationId;
-                  PresentationName = PresentationName;
-               }
+                    id.PresentationId = pre.PresentationId;
+                    id.PresentationName = pre.PresentationName;
+                    id.ImageName = pre.ImageName;
+
+                }
+
           }       }
+
         [Authorize]
         public void DeletePresentation(int id)
         {

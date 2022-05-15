@@ -15,31 +15,61 @@ namespace _1.e_Projekt.Services
 
         public void SaveToJson(Dictionary<int, Presentation> Presentations)
         {
-            JsonFileWriter.WriteToJson()
+            JsonFileWriter.WriteToJson2(Presentations, filename);
+        }
+
+        public Dictionary<int, Presentation> ReadToJson()
+        {
+            return JsonFileReader.ReadJson2(filename);
         }
         public void AddPresentation(Presentation pre)
         {
-            throw new NotImplementedException();
+            Dictionary<int, Presentation> Presentations = GetPreentations();
+            foreach (var ids in Presentations.Values)
+            {
+                if (ids.PresentationId.Equals(pre.PresentationId))
+                {
+                    Presentations.Add(pre.PresentationId, pre);
+                    JsonFileWriter.WriteToJson2(Presentations,filename);
+                }
+            }
+           
+
         }
 
         public void DeletePresentation(int id)
         {
-            throw new NotImplementedException();
+            Dictionary<int, Presentation> Presentations = GetPreentations();
+            Presentations.Remove(id);
+            JsonFileWriter.WriteToJson2(Presentations, filename);
         }
 
         public Dictionary<int, Presentation> GetPreentations()
         {
-            throw new NotImplementedException();
+            return ReadToJson();
         }
 
         public Presentation readPresentation(int id)
         {
-            throw new NotImplementedException();
+            Dictionary<int, Presentation> Presentations = GetPreentations();
+            Presentation FoundPresentations = Presentations[id];
+            return FoundPresentations;
+
         }
 
         public void UpdatePresentation(Presentation pre)
         {
-            throw new NotImplementedException();
+            Dictionary<int, Presentation> Presentations = GetPreentations();
+            foreach (var id in Presentations.Values)
+            {
+                if (id.PresentationId.Equals(pre.PresentationId))
+                {
+                    id.PresentationId = pre.PresentationId;
+                    id.PresentationName = pre.PresentationName;
+                    id.ImageName = pre.ImageName;
+                    JsonFileWriter.WriteToJson2(Presentations, filename);
+                }
+            }
         }
     }
 }

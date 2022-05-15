@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _1.e_Projekt.Interfaces
 {
-    interface IPresentation
+    public interface IPresentation
     {
         void AddPresentation(Presentation pre);
         void UpdatePresentation(Presentation pre);

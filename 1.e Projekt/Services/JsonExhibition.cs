@@ -13,7 +13,7 @@ namespace _1.e_Projekt.Services
 
         string filename = "./Data/JsonExhibitions.json";
 
-        public int Exhibitionid { get; private set; }
+      
 
         public void SaveToJson(Dictionary<int, Exhibition> Exhibitions)
         {
@@ -47,8 +47,16 @@ namespace _1.e_Projekt.Services
         public void AddExhibition(Exhibition ex)
         {
             Dictionary<int, Exhibition> Exhibitions = GetExhibitions();
-            Exhibitions.Add(Exhibitionid, ex);
-            JsonFileWriter.WriteToJson(Exhibitions,filename);
+            foreach (var ids in Exhibitions.Values)
+            {
+                 if(ids.ExhibitionId.Equals(ex.ExhibitionId))
+                {
+                    Exhibitions.Add(ex.ExhibitionId, ex);
+                    JsonFileWriter.WriteToJson(Exhibitions, filename);
+                }
+            }
+         
+         
         }
         [Authorize]
         public void UpdateExhibition(Exhibition ex)
