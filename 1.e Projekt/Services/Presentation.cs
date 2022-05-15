@@ -70,15 +70,15 @@ namespace _1.e_Projekt.Services
         {
            Presentations.Remove(id);        }
 
-       public Presentation readPresentation(int id)       {
+       public Presentation readPresentation(int id)      
+       {
             return Presentations[id];
        }
-      
-    }
-    public Dictionary<int, Presentation> GetPreentations()
-    {
-        return Presentations;
-    }
+        public Dictionary<int, Presentation> GetPreentations()
+        {
+            return Presentations;
+        }
 
-    
+    }
+        
 }
