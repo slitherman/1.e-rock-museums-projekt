@@ -1,5 +1,6 @@
 ﻿using _1.e_Projekt.Helpers;
 using _1.e_Projekt.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,21 +36,21 @@ namespace _1.e_Projekt.Services
             Exhibition FoundExhibitions = Exhibitions[id];
             return FoundExhibitions;
         }
-
+        [Authorize]
         public void DeleteExhibition(int id)
         {
             Dictionary<int, Exhibition> Exhibitions = GetExhibitions();
             Exhibitions.Remove(id);
             JsonFileWriter.WriteToJson(Exhibitions, filename);
         }
-
+        [Authorize]
         public void AddExhibition(Exhibition ex)
         {
             Dictionary<int, Exhibition> Exhibitions = GetExhibitions();
             Exhibitions.Add(Exhibitionid, ex);
             JsonFileWriter.WriteToJson(Exhibitions,filename);
         }
-
+        [Authorize]
         public void UpdateExhibition(Exhibition ex)
         {
             Dictionary<int, Exhibition> Exhibitions = GetExhibitions();
