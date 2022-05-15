@@ -9,24 +9,26 @@ namespace _1.e_Projekt.Services
 {
     public class Exhibition
     {
-        private Dictionary<int, Exhibition> Exhibitions { get; set; }
+       public Dictionary<int, Exhibition> Exhibitions { get; set; }
         public int ExhibitionId { get; set; }
         public string ExhibitionName { get; set; }
 
         public string ImageName { get; set; }
-
-        public Exhibition()
+        public int CtorId { get; set; }
+        //bruger et ctorid pga inheritance. Det ville se dumt ud af skulle bruge de andre variabler.
+        public Exhibition(int ConstructorId)
         {
 
-            {
+            
+                CtorId = ConstructorId;
                 Exhibitions = new Dictionary<int, Exhibition>();
-                Exhibitions.Add(1, new Exhibition() { ExhibitionId = 1, ExhibitionName = "Rockens opstart", ImageName="Rock.jpg" });
-                Exhibitions.Add(2, new Exhibition() { ExhibitionId = 2, ExhibitionName = "Musik før 2.Verdenskrig", ImageName="Jazz.jpg"});
-                Exhibitions.Add(3, new Exhibition() { ExhibitionId = 3, ExhibitionName = "Protestmusikken i 60'erne", ImageName="Protest.jpg" });
-                Exhibitions.Add(4, new Exhibition() { ExhibitionId = 4, ExhibitionName = "Stoffers indflydelse på musik" , ImageName="Woodstock.jpg"});
+                Exhibitions.Add(1, new Exhibition(1) { ExhibitionId = 1, ExhibitionName = "Rockens opstart", ImageName="Rock.jpg" });
+                Exhibitions.Add(2, new Exhibition(2) { ExhibitionId = 2, ExhibitionName = "Musik før 2.Verdenskrig", ImageName="Jazz.jpg"});
+                Exhibitions.Add(3, new Exhibition(3) { ExhibitionId = 3, ExhibitionName = "Protestmusikken i 60'erne", ImageName="Protest.jpg" });
+                Exhibitions.Add(4, new Exhibition(4) { ExhibitionId = 4, ExhibitionName = "Stoffers indflydelse på musik" , ImageName="Woodstock.jpg"});
 
 
-            }
+            
 
         }
 
