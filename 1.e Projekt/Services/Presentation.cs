@@ -23,10 +23,10 @@ namespace _1.e_Projekt.Services
             : base(ConstructorId)
        {
             Presentations = new Dictionary<int, Presentation>();
-            Presentations.Add(1, new Presentation(11) { PresentationId = 11, PresentationName = " Oplæg om Rockens opstart", ImageName = "Rock.jpg" });
-            Presentations.Add(2, new Presentation(21) { PresentationId = 21, PresentationName = " Oplæg omMusik før 2.Verdenskrig", ImageName = "Jazz.jpg" });
-            Presentations.Add(3, new Presentation(31) { PresentationId = 31, PresentationName = " Oplæg om Protestmusikken i 60'erne", ImageName = "Protest.jpg" });
-            Presentations.Add(4, new Presentation(41) { PresentationId = 41, PresentationName = " Oplæg om Stoffers indflydelse på musik", ImageName = "Woodstock.jpg" });
+            Presentations.Add(1, new Presentation(11) { PresentationId = 1, PresentationName = " Oplæg om Rockens opstart", ImageName = "Rock.jpg" });
+            Presentations.Add(2, new Presentation(21) { PresentationId = 1, PresentationName = " Oplæg omMusik før 2.Verdenskrig", ImageName = "Jazz.jpg" });
+            Presentations.Add(3, new Presentation(31) { PresentationId = 1, PresentationName = " Oplæg om Protestmusikken i 60'erne", ImageName = "Protest.jpg" });
+            Presentations.Add(4, new Presentation(41) { PresentationId = 1, PresentationName = " Oplæg om Stoffers indflydelse på musik", ImageName = "Woodstock.jpg" });
 
 
 
