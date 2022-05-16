@@ -1,3 +1,5 @@
+using _1.e_Projekt.Interfaces;
+using _1.e_Projekt.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -24,6 +26,10 @@ namespace _1.e_Projekt
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            services.AddSingleton<IExhibition,Exhibition>();
+            services.AddSingleton<IExhibition, JsonExhibition>();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

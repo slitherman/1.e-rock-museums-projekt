@@ -1,4 +1,6 @@
-﻿using System;
+﻿using _1.e_Projekt.Interfaces;
+using Microsoft.AspNetCore.Authorization;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -6,44 +8,47 @@ using Xamarin.Forms;
 
 namespace _1.e_Projekt.Services
 {
-    public class Exhibition
+    public class Exhibition: IExhibition
     {
-        private Dictionary<int, Exhibition> Exhibitions { get; set; }
+       public Dictionary<int, Exhibition> Exhibitions { get; set; }
         public int ExhibitionId { get; set; }
         public string ExhibitionName { get; set; }
-       
 
-        public Exhibition()
+        public string ImageName { get; set; }
+        public int CtorId { get; set; }
+        //bruger et ctorid pga inheritance. Det ville se dumt ud af skulle bruge de andre variabler.
+        public Exhibition(int ConstructorId)
         {
 
-            {
+            
+                CtorId = ConstructorId;
                 Exhibitions = new Dictionary<int, Exhibition>();
-                Exhibitions.Add(1, new Exhibition() { ExhibitionId = 1, ExhibitionName = "Rockens opstart" });
-                Exhibitions.Add(2, new Exhibition() { ExhibitionId = 2, ExhibitionName = "Musik før 2.Verdenskrig" });
-                Exhibitions.Add(3, new Exhibition() { ExhibitionId = 3, ExhibitionName = "Protestmusikken i 60'erne" });
-                Exhibitions.Add(4, new Exhibition() { ExhibitionId = 4, ExhibitionName = "Stoffers indflydelse på musik " });
+                Exhibitions.Add(1, new Exhibition(1) { ExhibitionId = 1, ExhibitionName = "Rockens opstart", ImageName="Rock.jpg" });
+                Exhibitions.Add(2, new Exhibition(2) { ExhibitionId = 2, ExhibitionName = "Musik før 2.Verdenskrig", ImageName="Jazz.jpg"});
+                Exhibitions.Add(3, new Exhibition(3) { ExhibitionId = 3, ExhibitionName = "Protestmusikken i 60'erne", ImageName="Protest.jpg" });
+                Exhibitions.Add(4, new Exhibition(4) { ExhibitionId = 4, ExhibitionName = "Stoffers indflydelse på musik" , ImageName="Woodstock.jpg"});
 
 
-            }
+            
 
         }
 
-        // er ikk helt sikker på hvad at dette gør
-        //public Dictionary<int, Exhibition> GetExhibitions()
-        //{
-        //    return Exhibitions;
-        //}
+       
+        public Dictionary<int, Exhibition> GetExhibitions()
+        {
+           return Exhibitions;
+        }
 
         public Exhibition GetExhibition(int id)
         {
             return Exhibitions[id];
         }
-
-        public void DeleteExhibition ()
+        [Authorize]
+        public void DeleteExhibition (int id)
         {
-            Exhibitions.Remove(ExhibitionId);
+            Exhibitions.Remove(id);
         }
-
+        [Authorize]
         public void AddExhibition(Exhibition ex)
         {
             if(!Exhibitions.Keys.Contains(ExhibitionId))
@@ -51,14 +56,16 @@ namespace _1.e_Projekt.Services
                 Exhibitions.Add(ExhibitionId, ex);
             }
         }
-        public void UpdateExhibition ()
+        [Authorize]
+        public void UpdateExhibition (Exhibition ex)
         {
-            foreach (var id in Exhibitions)
+            foreach (var id in Exhibitions.Values)
             {
-                if(id.Equals(ExhibitionId))
+                if(id.ExhibitionId.Equals(ex.ExhibitionId))
                 {
-                    ExhibitionId = ExhibitionId;
-                    ExhibitionName = ExhibitionName;
+                    id.ExhibitionId = ex.ExhibitionId;
+                    id.ExhibitionName = ex.ExhibitionName;
+                    id.ImageName = ex.ImageName;
                 }
             }
         }

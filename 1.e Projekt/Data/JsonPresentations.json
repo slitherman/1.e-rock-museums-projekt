@@ -1,0 +1,29 @@
+{
+
+  "1": {
+
+    "PresentationnId": 1,
+    "PresentationName": " Oplæg Om Rockens Opstart",
+    "ImageName": "Rock"
+
+  },
+  "2": {
+
+    "PresentationnId": 2,
+    "PresentationName": " Oplæg Om Musik Før 2.Verdenskrig",
+    "ImageName": "Jazz"
+
+  },
+  "3": {
+
+    "PresentationnId": 3,
+    "PresentationName": "Oplæg Om Protestmusikken i 60'erne",
+    "ImageName": "Protest"
+
+  },
+  "4": {
+    "PresentationnId": 3,
+    "PresentationName": "Oplæg Om Stoffers Indflydelse På Musik ",
+    "ImageName": "."
+  }
+}
