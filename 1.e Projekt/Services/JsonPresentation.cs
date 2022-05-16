@@ -13,18 +13,18 @@ namespace _1.e_Projekt.Services
         string filename = "./Data/JsonExhibitions.json";
 
 
-        public void SaveToJson(Dictionary<int, Presentation> Presentations)
+        public void SaveToJson(Dictionary<int, Exhibition> Presentations)
         {
             JsonFileWriter.WriteToJson2(Presentations, filename);
         }
 
-        public Dictionary<int, Presentation> ReadToJson()
+        public Dictionary<int, Exhibition> ReadToJson()
         {
             return JsonFileReader.ReadJson2(filename);
         }
-        public void AddPresentation(Presentation pre)
+        public void AddPresentation(Exhibition pre)
         {
-            Dictionary<int, Presentation> Presentations = GetPreentations();
+            Dictionary<int, Exhibition> Presentations = GetPreentations();
             foreach (var ids in Presentations.Values)
             {
                 if (ids.PresentationId.Equals(pre.PresentationId))
@@ -39,32 +39,32 @@ namespace _1.e_Projekt.Services
 
         public void DeletePresentation(int id)
         {
-            Dictionary<int, Presentation> Presentations = GetPreentations();
+            Dictionary<int, Exhibition> Presentations = GetPreentations();
             Presentations.Remove(id);
             JsonFileWriter.WriteToJson2(Presentations, filename);
         }
 
-        public Dictionary<int, Presentation> GetPreentations()
+        public Dictionary<int, Exhibition> GetPreentations()
         {
             return ReadToJson();
         }
 
-        public Presentation readPresentation(int id)
+        public Exhibition readPresentation(int id)
         {
-            Dictionary<int, Presentation> Presentations = GetPreentations();
-            Presentation FoundPresentations = Presentations[id];
+            Dictionary<int, Exhibition> Presentations = GetPreentations();
+            Exhibition FoundPresentations = Presentations[id];
             return FoundPresentations;
 
         }
 
-        public void UpdatePresentation(Presentation pre)
+        public void UpdatePresentation(Exhibition pre)
         {
-            Dictionary<int, Presentation> Presentations = GetPreentations();
+            Dictionary<int, Exhibition> Presentations = GetPreentations();
             foreach (var id in Presentations.Values)
             {
-                if (id.PresentationId.Equals(pre.PresentationId))
+                if (id.PresentationId.Equals(pre.ExhibitionId))
                 {
-                    id.PresentationId = pre.PresentationId;
+                    id.PresentationId = pre.ExhibitionId;
                     id.PresentationName = pre.PresentationName;
                     id.ImageName = pre.ImageName;
                     JsonFileWriter.WriteToJson2(Presentations, filename);

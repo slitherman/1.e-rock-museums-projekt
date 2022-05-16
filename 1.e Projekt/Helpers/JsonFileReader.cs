@@ -16,10 +16,10 @@ namespace _1.e_Projekt.Helpers
             return JsonConvert.DeserializeObject<Dictionary<int, Exhibition>>(filename);
         }
 
-        public static Dictionary<int,Presentation> ReadJson2(string filename)
+        public static Dictionary<int, Exhibition> ReadJson2(string filename)
         {
             string jsonstring = File.ReadAllText(filename);
-            return JsonConvert.DeserializeObject<Dictionary<int,Presentation>>(filename);
+            return JsonConvert.DeserializeObject<Dictionary<int, Exhibition>>(filename);
         }
 
 

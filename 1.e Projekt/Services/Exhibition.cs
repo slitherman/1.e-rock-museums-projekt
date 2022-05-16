@@ -24,18 +24,19 @@ namespace _1.e_Projekt.Services
         public Exhibition()
         {
 
-            
-                
+
+            //Giver op. Dette er den letteste måde at kunne få de 2 collections til at kommunikere med hinanden + dependency injection er også blevet muligt.
                 Exhibitions = new Dictionary<int, Exhibition>();
                 Exhibitions.Add(1, new Exhibition() { ExhibitionId = 1, ExhibitionName = "Rockens opstart", ImageName="Rock.jpg" });
                 Exhibitions.Add(2, new Exhibition() { ExhibitionId = 2, ExhibitionName = "Musik før 2.Verdenskrig", ImageName="Jazz.jpg"});
                 Exhibitions.Add(3, new Exhibition() { ExhibitionId = 3, ExhibitionName = "Protestmusikken i 60'erne", ImageName="Protest.jpg" });
                 Exhibitions.Add(4, new Exhibition() { ExhibitionId = 4, ExhibitionName = "Stoffers indflydelse på musik" , ImageName="Woodstock.jpg"});
-                Presentations = new Dictionary<int, Exhibition>();
-                Presentations.Add(1, new Presentation() { PresentationId = 1, PresentationName = " Oplæg Om Rockens Opstart", ImageName = "Rock.jpg" });
-                Presentations.Add(2, new Presentation() { PresentationId = 1, PresentationName = " Oplæg Om Musik Før 2.Verdenskrig", ImageName = "Jazz.jpg" });
-                Presentations.Add(3, new Presentation() { PresentationId = 1, PresentationName = " Oplæg Om Protestmusikken i 60'erne", ImageName = "Protest.jpg" });
-                Presentations.Add(4, new Presentation() { PresentationId = 1, PresentationName = " Oplæg Om Stoffers Indflydelse På Musik", ImageName = "Woodstock.jpg" });
+            //Har fjernet presentation klassen, alle presentations er nu exhibitions
+            Presentations = new Dictionary<int, Exhibition>();
+                Presentations.Add(1, new Exhibition() { PresentationId = 1, PresentationName = " Oplæg Om Rockens Opstart", ImageName = "Rock.jpg" });
+                Presentations.Add(2, new Exhibition() { PresentationId = 1, PresentationName = " Oplæg Om Musik Før 2.Verdenskrig", ImageName = "Jazz.jpg" });
+                Presentations.Add(3, new Exhibition() { PresentationId = 1, PresentationName = " Oplæg Om Protestmusikken i 60'erne", ImageName = "Protest.jpg" });
+                Presentations.Add(4, new Exhibition() { PresentationId = 1, PresentationName = " Oplæg Om Stoffers Indflydelse På Musik", ImageName = "Woodstock.jpg" });
             foreach (var ids in Presentations.Values)
             {
                 if(ids.ExhibitionId.Equals(PresentationId))
@@ -46,8 +47,6 @@ namespace _1.e_Projekt.Services
 
                }
             }
-
-
 
         }
 
@@ -86,6 +85,46 @@ namespace _1.e_Projekt.Services
                     id.ImageName = ex.ImageName;
                 }
             }
+        }
+
+
+        [Authorize]
+        public void AddPresentation(Exhibition pre)
+        {
+            if (!Presentations.Keys.Contains(pre.ExhibitionId))
+            {
+                Presentations.Add(PresentationId, pre);
+            }
+        }
+        [Authorize]
+        public void UpdatePresentation(Exhibition pre)
+        {
+            foreach (var id in Presentations.Values)
+            {
+                if (id.PresentationId.Equals(pre.ExhibitionId))
+                {
+                    id.PresentationId = pre.ExhibitionId;
+                    id.PresentationName = pre.PresentationName;
+                    id.ImageName = pre.ImageName;
+
+                }
+
+            }
+        }
+
+        [Authorize]
+        public void DeletePresentation(int id)
+        {
+            Presentations.Remove(id);
+        }
+
+        public Exhibition readPresentation(int id)
+        {
+            return Presentations[id];
+        }
+        public Dictionary<int, Exhibition> GetPreentations()
+        {
+            return Presentations;
         }
 
 

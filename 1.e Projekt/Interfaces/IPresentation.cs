@@ -8,11 +8,11 @@ namespace _1.e_Projekt.Interfaces
 {
     public interface IPresentation
     {
-        void AddPresentation(Presentation pre);
-        void UpdatePresentation(Presentation pre);
+        void AddPresentation(Exhibition pre);
+        void UpdatePresentation(Exhibition pre);
         void DeletePresentation(int id);
-        Presentation readPresentation(int id);
-        Dictionary<int, Presentation> GetPreentations();
+        Exhibition readPresentation(int id);
+        Dictionary<int, Exhibition> GetPreentations();
 
     }
 }
