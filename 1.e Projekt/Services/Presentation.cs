@@ -23,11 +23,7 @@ namespace _1.e_Projekt.Services
         public Presentation( int ConstructorId)
             : base(ConstructorId)
        {
-            Presentations = new Dictionary<int, Presentation>();
-            Presentations.Add(1, new Presentation(11) { PresentationId = 1, PresentationName = " Oplæg Om Rockens Opstart", ImageName = "Rock.jpg" });
-            Presentations.Add(2, new Presentation(21) { PresentationId = 1, PresentationName = " Oplæg Om Musik Før 2.Verdenskrig", ImageName = "Jazz.jpg" });
-            Presentations.Add(3, new Presentation(31) { PresentationId = 1, PresentationName = " Oplæg Om Protestmusikken i 60'erne", ImageName = "Protest.jpg" });
-            Presentations.Add(4, new Presentation(41) { PresentationId = 1, PresentationName = " Oplæg Om Stoffers Indflydelse På Musik", ImageName = "Woodstock.jpg" });
+            
 
 
 
@@ -59,9 +55,9 @@ namespace _1.e_Projekt.Services
        {
           foreach (var id in Presentations.Values)
             {
-                if (id.PresentationId.Equals(pre.PresentationId))
+                if (id.PresentationId.Equals(pre.ExhibitionId))
              {
-                    id.PresentationId = pre.PresentationId;
+                    id.PresentationId = pre.ExhibitionId;
                     id.PresentationName = pre.PresentationName;
                     id.ImageName = pre.ImageName;
 
