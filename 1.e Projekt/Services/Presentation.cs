@@ -11,8 +11,9 @@ namespace _1.e_Projekt.Services
    public class Presentation: Exhibition
     {
     public Dictionary<int, Presentation> Presentations { get; set; }
-     
-       public string PresentationName { get;  set; }
+        private static Presentation _Instance;
+
+        public string PresentationName { get;  set; }
        public int PresentationId { get;  set; }
        public string ImageName { get; set; }
 
@@ -20,15 +21,10 @@ namespace _1.e_Projekt.Services
 
 
 
-        public Presentation( int ConstructorId)
-            : base(ConstructorId)
+        public Presentation( )
+            
        {
             
-
-
-
-       
-
             //foreach (var ids in Presentations.Values)
             //{
             //    if(ids.ExhibitionId.Equals(PresentationId))
@@ -40,6 +36,18 @@ namespace _1.e_Projekt.Services
             //    }
             //}
         }
+        public static Presentation Instance
+        {
+            get
+            {
+                if(_Instance ==null)
+                {
+                    _Instance = new Presentation();
+                }
+                return Instance;
+            }
+        }
+
 
         //der er ikke overlap imellem de 2 klasser, skal finde ud hvordan at jeg skal fixe det
         [Authorize]

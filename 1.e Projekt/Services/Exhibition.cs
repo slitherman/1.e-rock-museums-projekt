@@ -18,23 +18,24 @@ namespace _1.e_Projekt.Services
         public int PresentationId { get; set; }
 
         public string ImageName { get; set; }
+        //not currently in use, might use it again later
         public int CtorId { get; set; }
         //bruger et ctorid pga inheritance. Det ville se dumt ud af skulle bruge de andre variabler.
-        public Exhibition(int ConstructorId)
+        public Exhibition()
         {
 
             
-                CtorId = ConstructorId;
+                
                 Exhibitions = new Dictionary<int, Exhibition>();
-                Exhibitions.Add(1, new Exhibition(1) { ExhibitionId = 1, ExhibitionName = "Rockens opstart", ImageName="Rock.jpg" });
-                Exhibitions.Add(2, new Exhibition(2) { ExhibitionId = 2, ExhibitionName = "Musik før 2.Verdenskrig", ImageName="Jazz.jpg"});
-                Exhibitions.Add(3, new Exhibition(3) { ExhibitionId = 3, ExhibitionName = "Protestmusikken i 60'erne", ImageName="Protest.jpg" });
-                Exhibitions.Add(4, new Exhibition(4) { ExhibitionId = 4, ExhibitionName = "Stoffers indflydelse på musik" , ImageName="Woodstock.jpg"});
+                Exhibitions.Add(1, new Exhibition() { ExhibitionId = 1, ExhibitionName = "Rockens opstart", ImageName="Rock.jpg" });
+                Exhibitions.Add(2, new Exhibition() { ExhibitionId = 2, ExhibitionName = "Musik før 2.Verdenskrig", ImageName="Jazz.jpg"});
+                Exhibitions.Add(3, new Exhibition() { ExhibitionId = 3, ExhibitionName = "Protestmusikken i 60'erne", ImageName="Protest.jpg" });
+                Exhibitions.Add(4, new Exhibition() { ExhibitionId = 4, ExhibitionName = "Stoffers indflydelse på musik" , ImageName="Woodstock.jpg"});
                 Presentations = new Dictionary<int, Exhibition>();
-                Presentations.Add(1, new Presentation(11) { PresentationId = 1, PresentationName = " Oplæg Om Rockens Opstart", ImageName = "Rock.jpg" });
-                Presentations.Add(2, new Presentation(21) { PresentationId = 1, PresentationName = " Oplæg Om Musik Før 2.Verdenskrig", ImageName = "Jazz.jpg" });
-                Presentations.Add(3, new Presentation(31) { PresentationId = 1, PresentationName = " Oplæg Om Protestmusikken i 60'erne", ImageName = "Protest.jpg" });
-                Presentations.Add(4, new Presentation(41) { PresentationId = 1, PresentationName = " Oplæg Om Stoffers Indflydelse På Musik", ImageName = "Woodstock.jpg" });
+                Presentations.Add(1, new Presentation() { PresentationId = 1, PresentationName = " Oplæg Om Rockens Opstart", ImageName = "Rock.jpg" });
+                Presentations.Add(2, new Presentation() { PresentationId = 1, PresentationName = " Oplæg Om Musik Før 2.Verdenskrig", ImageName = "Jazz.jpg" });
+                Presentations.Add(3, new Presentation() { PresentationId = 1, PresentationName = " Oplæg Om Protestmusikken i 60'erne", ImageName = "Protest.jpg" });
+                Presentations.Add(4, new Presentation() { PresentationId = 1, PresentationName = " Oplæg Om Stoffers Indflydelse På Musik", ImageName = "Woodstock.jpg" });
             foreach (var ids in Presentations.Values)
             {
                 if(ids.ExhibitionId.Equals(PresentationId))
