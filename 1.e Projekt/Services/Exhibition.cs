@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using _1.e_Projekt.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using Xamarin.Forms;
 
 namespace _1.e_Projekt.Services
 {
-    public class Exhibition
+    public class Exhibition: IExhibition
     {
        public Dictionary<int, Exhibition> Exhibitions { get; set; }
         public int ExhibitionId { get; set; }
