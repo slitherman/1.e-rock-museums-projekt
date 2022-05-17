@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _1.e_Projekt.Interfaces
 {
-    interface IUserInterface
+   public interface IUserInterface
     {
         Dictionary<int, Users> GetAllUsers();
         Users FindUser(int UserId);
