@@ -36,14 +36,14 @@ namespace _1.e_Projekt.Services
             Exhibition FoundExhibitions = Exhibitions[id];
             return FoundExhibitions;
         }
-        [Authorize]
+    
         public void DeleteExhibition(int id)
         {
             Dictionary<int, Exhibition> Exhibitions = GetExhibitions();
             Exhibitions.Remove(id);
             JsonFileWriter.WriteToJson(Exhibitions, filename);
         }
-        [Authorize]
+        
         public void AddExhibition(Exhibition ex)
         {
             Dictionary<int, Exhibition> Exhibitions = GetExhibitions();
@@ -58,7 +58,7 @@ namespace _1.e_Projekt.Services
          
          
         }
-        [Authorize]
+       
         public void UpdateExhibition(Exhibition ex)
         {
             Dictionary<int, Exhibition> Exhibitions = GetExhibitions();

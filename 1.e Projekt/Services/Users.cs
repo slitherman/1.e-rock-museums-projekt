@@ -16,6 +16,7 @@ namespace _1.e_Projekt.Services
         public string Email { get; set; }
         public string Password { get; set; }
         public string UserIcon { get; set; }
+        [Key]
         public int UserId { get; set; }
 
         public Dictionary<int, Users> UserCollection { get; set; }

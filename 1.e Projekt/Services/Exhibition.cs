@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -12,9 +13,11 @@ namespace _1.e_Projekt.Services
     {
        public Dictionary<int, Exhibition> Exhibitions { get; set; }
         public Dictionary<int, Exhibition> Presentations { get; set; }
+        [Key]
         public int ExhibitionId { get; set; }
         public string ExhibitionName { get; set; }
         public string PresentationName { get; set; }
+        [Key]
         public int PresentationId { get; set; }
 
         public string ImageName { get; set; }
@@ -68,12 +71,12 @@ namespace _1.e_Projekt.Services
         {
             return Exhibitions[id];
         }
-        [Authorize]
+        
         public void DeleteExhibition (int id)
         {
             Exhibitions.Remove(id);
         }
-        [Authorize]
+      
         public void AddExhibition(Exhibition ex)
         {
             if(!Exhibitions.Keys.Contains(ExhibitionId))
@@ -81,7 +84,7 @@ namespace _1.e_Projekt.Services
                 Exhibitions.Add(ExhibitionId, ex);
             }
         }
-        [Authorize]
+      
         public void UpdateExhibition (Exhibition ex)
         {
             foreach (var id in Exhibitions.Values)
@@ -96,7 +99,7 @@ namespace _1.e_Projekt.Services
         }
 
 
-        [Authorize]
+      
         public void AddPresentation(Exhibition pre)
         {
             if (!Presentations.Keys.Contains(pre.ExhibitionId))
@@ -104,7 +107,7 @@ namespace _1.e_Projekt.Services
                 Presentations.Add(PresentationId, pre);
             }
         }
-        [Authorize]
+      
         public void UpdatePresentation(Exhibition pre)
         {
             foreach (var id in Presentations.Values)
@@ -120,7 +123,7 @@ namespace _1.e_Projekt.Services
             }
         }
 
-        [Authorize]
+     
         public void DeletePresentation(int id)
         {
             Presentations.Remove(id);
