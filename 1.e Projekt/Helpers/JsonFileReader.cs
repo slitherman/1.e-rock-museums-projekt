@@ -22,6 +22,11 @@ namespace _1.e_Projekt.Helpers
             return JsonConvert.DeserializeObject<Dictionary<int, Exhibition>>(filename);
         }
 
+        public static Dictionary<int, Users> ReadJson3(string filename)
+        {
+            string jsonstring = File.ReadAllText(filename);
+            return JsonConvert.DeserializeObject<Dictionary<int, Users>>(filename);
+        }
 
     }
 }

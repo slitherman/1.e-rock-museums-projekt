@@ -25,5 +25,13 @@ namespace _1.e_Projekt.Helpers
             File.WriteAllText(filename, output);
 
         }
+
+        public static void WriteToJson3(Dictionary<int, Users> Presentations, string filename)
+        {
+            string output = Newtonsoft.Json.JsonConvert.SerializeObject(Presentations, Newtonsoft.Json.Formatting.Indented);
+
+            File.WriteAllText(filename, output);
+
+        }
     }
 }
