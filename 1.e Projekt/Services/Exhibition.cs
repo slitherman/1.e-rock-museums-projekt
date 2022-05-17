@@ -39,13 +39,21 @@ namespace _1.e_Projekt.Services
                 Presentations.Add(4, new Exhibition() { PresentationId = 1, PresentationName = " Oplæg Om Stoffers Indflydelse På Musik", ImageName = "Woodstock.jpg" });
             foreach (var ids in Presentations.Values)
             {
-                if(ids.ExhibitionId.Equals(PresentationId))
+                if(ids.PresentationId.Equals(ExhibitionId))
                {
 
                   var CombinedCollections = Presentations.Concat(Exhibitions.Where(kvp => !Presentations.ContainsKey(kvp.Key)));
 
 
                }
+                if (Presentations.Keys.Contains(PresentationId))
+                {
+                    if (!ids.PresentationId.Equals(ExhibitionId))
+                    {
+                        throw new Exception(" error presentation doesnt have an exhibition assigned to it");
+                    }
+                }
+                         
             }
 
         }
