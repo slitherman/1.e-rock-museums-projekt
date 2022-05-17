@@ -14,7 +14,7 @@ namespace _1.e_Projekt.Pages.MyPages
     public class DeleteExhibitionsModel : PageModel
     {
          public IExhibition Exhibition;
-        [BindProperty(SupportsGet =true)]
+        [BindProperty]
         public Exhibition DeletedExhibition { get; set; }
         public DeleteExhibitionsModel(IExhibition repo)
         {
@@ -22,9 +22,14 @@ namespace _1.e_Projekt.Pages.MyPages
         }
         public IActionResult OnGet(int id)
         {
-            DeletedExhibition.DeleteExhibition(id);
-            return RedirectToPage("GetExhibitions");
+            DeletedExhibition = Exhibition.GetExhibition(id);
+            return Page();
 
+        }
+        public IActionResult OnPost(int id)
+        {
+            Exhibition.DeleteExhibition(id);
+            return RedirectToPage("GetExhibitions");
         }
     }
 }

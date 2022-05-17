@@ -11,23 +11,25 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 namespace _1.e_Projekt.Pages.MyPages
 {
     [AllowAnonymous]
-    public class GetExhibitionModel : PageModel
+    public class GetExhibitionsModel : PageModel
     {
-        public IExhibition Exhibitions;
-        public Exhibition ReturnedExhibition { get; set; }
-        public GetExhibitionModel(IExhibition repo)
+        public IExhibition Exhibition;
+
+        public GetExhibitionsModel(IExhibition  repo)
         {
-            Exhibitions = repo;
+            Exhibition = repo;
+
         }
+        [BindProperty(SupportsGet =true)]
+        private Dictionary<int, Exhibition> ExhibitionCollection { get; set; }
 
         public IActionResult OnGet()
         {
+
+
+            ExhibitionCollection = Exhibition.GetExhibitions();
             return Page();
-        }
-        public IActionResult OnPost(int id)
-        {
-            ReturnedExhibition = Exhibitions.GetExhibition(id);
-            return RedirectToPage("GetExhibitions");
+
         }
     }
 }
