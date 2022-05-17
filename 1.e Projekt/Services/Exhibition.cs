@@ -109,6 +109,10 @@ namespace _1.e_Projekt.Services
                     id.ExhibitionName = ex.ExhibitionName;
                     id.ImageName = ex.ImageName;
                 }
+                if (!id.ExhibitionId.Equals(ex.ExhibitionId))
+                {
+                    throw new Exception("error");
+                }
             }
         }
 
@@ -132,6 +136,10 @@ namespace _1.e_Projekt.Services
                     id.PresentationName = pre.PresentationName;
                     id.ImageName = pre.ImageName;
 
+                }
+                if(!id.PresentationId.Equals(pre.ExhibitionId))
+                {
+                    throw new Exception("error");
                 }
 
             }

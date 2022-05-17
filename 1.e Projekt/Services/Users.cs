@@ -80,6 +80,10 @@ namespace _1.e_Projekt.Services
                     ids.Email = user.Email;
                     ids.Password = user.Password;
                     ids.UserIcon = user.UserIcon;
+                   if(!ids.UserId.Equals(user.UserId))
+                    {
+                        throw new Exception("error");
+                    }
                 }
             }
             

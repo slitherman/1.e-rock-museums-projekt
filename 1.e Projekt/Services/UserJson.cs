@@ -71,6 +71,10 @@ namespace _1.e_Projekt.Services
                     ids.UserIcon = user.UserIcon;
                     JsonFileWriter.WriteToJson3(UserCollection, filename);
                 }
+                if(!ids.UserId.Equals(user.UserId))
+                {
+                    throw new Exception("error");
+                }
             }
             }
         }

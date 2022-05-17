@@ -72,7 +72,12 @@ namespace _1.e_Projekt.Services
                     id.ImageName = ex.ImageName;
                     JsonFileWriter.WriteToJson(Exhibitions, filename);
                 }
+                if(!id.ExhibitionId.Equals(ex.ExhibitionId))
+                {
+                    throw new Exception("error");
+                }
             }
+
 
         }
 
