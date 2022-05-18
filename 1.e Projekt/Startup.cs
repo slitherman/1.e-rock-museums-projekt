@@ -27,7 +27,10 @@ namespace _1.e_Projekt
         {
             services.AddRazorPages();
             services.AddSingleton<IExhibition,Exhibition>();
-            services.AddSingleton<IExhibition, JsonExhibition>();
+            services.AddTransient<IExhibition, JsonExhibition>();
+            services.AddSingleton<IUserInterface, Users>();
+            services.AddTransient<IUserInterface, UserJson>();
+
 
 
         }
