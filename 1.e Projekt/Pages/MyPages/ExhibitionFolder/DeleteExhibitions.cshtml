@@ -2,3 +2,25 @@
 @model _1.e_Projekt.Pages.MyPages.DeleteExhibitionsModel
 @{
 }
+<h1>  Delete Exhibition  </h1>
+<form action="/" method="post">
+
+    <dl>
+        <dt>@Html.DisplayNameFor(model => model.DeletedExhibition.ExhibitionId)</dt>
+        <dd>
+            @Html.DisplayFor(model => model.DeletedExhibition.ExhibitionId)
+        </dd>
+    </dl>
+    <dl>
+        <dt>@Html.DisplayNameFor(model => model.DeletedExhibition.ExhibitionName)</dt>
+        <dd>
+            @Html.DisplayFor(model => model.DeletedExhibition.ExhibitionName)
+        </dd>
+    </dl>
+    <dl>
+        <dt>@Html.DisplayNameFor(model => model.DeletedExhibition.ImageName)</dt>
+        <dd>
+            @Html.DisplayFor(model => model.DeletedExhibition.ImageName)
+        </dd>
+    </dl>
+</form>

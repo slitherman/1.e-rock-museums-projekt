@@ -13,19 +13,19 @@ namespace _1.e_Projekt.Helpers
       public static Dictionary<int, Exhibition> ReadJson (string filename)
         {
             string jsonstring = File.ReadAllText(filename);
-            return JsonConvert.DeserializeObject<Dictionary<int, Exhibition>>(filename);
+            return JsonConvert.DeserializeObject<Dictionary<int, Exhibition>>(jsonstring);
         }
 
         public static Dictionary<int, Exhibition> ReadJson2(string filename)
         {
             string jsonstring = File.ReadAllText(filename);
-            return JsonConvert.DeserializeObject<Dictionary<int, Exhibition>>(filename);
+            return JsonConvert.DeserializeObject<Dictionary<int, Exhibition>>(jsonstring);
         }
 
         public static Dictionary<int, Users> ReadJson3(string filename)
         {
             string jsonstring = File.ReadAllText(filename);
-            return JsonConvert.DeserializeObject<Dictionary<int, Users>>(filename);
+            return JsonConvert.DeserializeObject<Dictionary<int, Users>>(jsonstring);
         }
 
     }

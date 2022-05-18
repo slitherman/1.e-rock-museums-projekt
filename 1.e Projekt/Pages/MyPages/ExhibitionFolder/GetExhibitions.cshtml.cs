@@ -21,7 +21,7 @@ namespace _1.e_Projekt.Pages.MyPages
 
         }
         [BindProperty(SupportsGet =true)]
-        private Dictionary<int, Exhibition> ExhibitionCollection { get; set; }
+        public Dictionary<int, Exhibition> ExhibitionCollection { get; set; }
 
         public IActionResult OnGet()
         {

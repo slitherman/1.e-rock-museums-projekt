@@ -15,7 +15,7 @@ namespace _1.e_Projekt.Pages.MyPages
     {
         public IExhibition Exhibition;
         [BindProperty]
-        private Exhibition UpdatedExhibition { get; set; }
+        public Exhibition UpdatedExhibition { get; set; }
 
         public UpdateExhibitionsModel(IExhibition repo)
         {
