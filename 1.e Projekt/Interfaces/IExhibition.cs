@@ -13,6 +13,12 @@ namespace _1.e_Projekt.Interfaces
         void AddExhibition(Exhibition ex);
         void UpdateExhibition(Exhibition ex);
         Dictionary<int, Exhibition> GetExhibitions();
+        void AddPresentation(Exhibition pre);
+        void UpdatePresentation(Exhibition pre);
+        void DeletePresentation(int id);
+        Exhibition readPresentation(int id);
+        Dictionary<int, Exhibition> GetPreentations();
+
 
 
     }

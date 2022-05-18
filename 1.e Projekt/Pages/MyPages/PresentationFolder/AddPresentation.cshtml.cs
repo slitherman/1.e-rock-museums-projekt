@@ -15,11 +15,11 @@ namespace _1.e_Projekt.Pages.MyPages.PresentationFolder
     public class AddPresentationModel : PageModel
     {
 
-        private IPresentation PresentationMethods;
+        private IExhibition PresentationMethods;
         [BindProperty]
         [PageRemote(PageHandler = " IsPresentationNameTaken", HttpMethod ="Get", ErrorMessage ="Error presentation already exists")]
         public Exhibition Presentation { get; set; }
-        public AddPresentationModel(IPresentation repo)
+        public AddPresentationModel(IExhibition repo)
         {
             PresentationMethods = repo;
         }

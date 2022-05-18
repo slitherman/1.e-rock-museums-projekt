@@ -14,10 +14,10 @@ namespace _1.e_Projekt.Pages.MyPages.PresentationFolder
     public class DeletePresentationModel : PageModel
     {
       
-        public IPresentation PresentationMethods;
+        public IExhibition PresentationMethods;
         [BindProperty]
         public Exhibition Presentation { get; set; }
-        public DeletePresentationModel(IPresentation repo)
+        public DeletePresentationModel(IExhibition repo)
         {
             PresentationMethods= repo;
         }

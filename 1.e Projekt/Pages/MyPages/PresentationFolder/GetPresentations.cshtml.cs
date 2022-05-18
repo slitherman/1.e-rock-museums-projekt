@@ -13,10 +13,10 @@ namespace _1.e_Projekt.Pages.MyPages.PresentationFolder
     [AllowAnonymous]
     public class GetPresentationsModel : PageModel
     {
-        public IPresentation PresentationMethods;
+        public IExhibition PresentationMethods;
         [BindProperty]
         private  Dictionary<int, Exhibition> Presentations { get; set; }
-        public GetPresentationsModel(IPresentation repo)
+        public GetPresentationsModel(IExhibition repo)
         {
             PresentationMethods = repo;
 
