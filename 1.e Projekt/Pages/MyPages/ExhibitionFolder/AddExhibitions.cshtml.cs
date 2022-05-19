@@ -12,7 +12,6 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 namespace _1.e_Projekt.Pages.MyPages
 {
     [Authorize]
-   
     public class AddExhibitionsModel : PageModel
     {
         
