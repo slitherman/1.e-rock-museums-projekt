@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 namespace _1.e_Projekt.Pages.MyPages
 {
     [Authorize]
+   
     public class AddExhibitionsModel : PageModel
     {
         
@@ -28,6 +29,7 @@ namespace _1.e_Projekt.Pages.MyPages
         {
             return Page();
         }
+
         public IActionResult OnPost(Exhibition ex)
         {
             AddedExhibition.AddExhibition(ex);
