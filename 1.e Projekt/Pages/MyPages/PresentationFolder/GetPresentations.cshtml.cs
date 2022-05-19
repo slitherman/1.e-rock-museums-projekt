@@ -14,8 +14,8 @@ namespace _1.e_Projekt.Pages.MyPages.PresentationFolder
     public class GetPresentationsModel : PageModel
     {
         public IExhibition PresentationMethods;
-        [BindProperty]
-        private  Dictionary<int, Exhibition> Presentations { get; set; }
+        [BindProperty(SupportsGet =true)]
+       public  Dictionary<int, Exhibition> Presentations { get; set; }
         public GetPresentationsModel(IExhibition repo)
         {
             PresentationMethods = repo;
@@ -23,13 +23,10 @@ namespace _1.e_Projekt.Pages.MyPages.PresentationFolder
         }
         public IActionResult OnGet()
         {
+            Presentations = PresentationMethods.GetPreentations();
             return Page();
 
         }
-        public IActionResult OnPost()
-        {
-            Presentations = PresentationMethods.GetPreentations();
-            return Page();
-        }
+      
     }
 }

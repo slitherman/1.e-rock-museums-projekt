@@ -10,7 +10,7 @@ namespace _1.e_Projekt.Services
     public class UserJson: IUserInterface
     {
 
-        string filename = "/Data/UserDatabase.json/";
+       readonly string filename = "/Data/UserDatabase.json/";
 
         public void  SaveJson (Dictionary<int, Users> UserCollection)
         {
@@ -46,7 +46,7 @@ namespace _1.e_Projekt.Services
         public void CreateUser(Users user)
         {
             Dictionary<int, Users> UserCollection = GetAllUsers();
-            foreach (var ids in UserCollection.Values)
+  
             {
                 if(!UserCollection.Keys.Contains(user.UserId))
               

@@ -15,7 +15,7 @@ namespace _1.e_Projekt.Pages.MyPages.PresentationFolder
     public class AddPresentationModel : PageModel
     {
 
-        private IExhibition PresentationMethods;
+        private readonly IExhibition PresentationMethods;
         [BindProperty]
         [PageRemote(PageHandler = " IsPresentationNameTaken", HttpMethod ="Get", ErrorMessage ="Error presentation already exists")]
         public Exhibition Presentation { get; set; }
@@ -25,7 +25,7 @@ namespace _1.e_Projekt.Pages.MyPages.PresentationFolder
         }
         public IActionResult OnGet(int id)
         {
-            Presentation = PresentationMethods.readPresentation(id);
+            Presentation = PresentationMethods.ReadPresentation(id);
             return Page();
             
 

@@ -14,9 +14,9 @@ namespace _1.e_Projekt.Pages.MyPages.UserFolder
     public class GetUsersModel : PageModel
     {
       
-        private IUserInterface UserMethods; 
+        private readonly IUserInterface UserMethods; 
         [BindProperty(SupportsGet =true)]
-        private Dictionary<int, Users> ExhibitionCollection { get; set; }
+        public Dictionary<int, Users> ExhibitionCollection { get; set; }
         public GetUsersModel(IUserInterface repo)
         {
             UserMethods = repo;

@@ -13,16 +13,16 @@ namespace _1.e_Projekt.Pages.MyPages.PresentationFolder
     [Authorize]
     public class UpdatePresentationModel : PageModel
     {
-        public IPresentation PresentationMethods;
+        public IExhibition PresentationMethods;
         [BindProperty]
         public Exhibition Presentation { get; set; }
-        public UpdatePresentationModel(IPresentation repo)
+        public UpdatePresentationModel(IExhibition repo)
         {
             PresentationMethods = repo;
         }
         public IActionResult OnGet(int id)
         {
-            Presentation = PresentationMethods.readPresentation(id);
+            Presentation = PresentationMethods.ReadPresentation(id);
             return Page();
         }
         public IActionResult OnPost(Exhibition pre)

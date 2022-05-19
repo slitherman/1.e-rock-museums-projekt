@@ -13,16 +13,16 @@ namespace _1.e_Projekt.Pages.MyPages.UserFolder
     [Authorize]
     public class UpdateUserModel : PageModel
     {
-        private IUserInterface UserMethods;
+        private readonly IUserInterface UserMethods;
         [BindProperty]
-        private Users Users { get; set; }
+        public Users Users { get; set; }
         public UpdateUserModel(IUserInterface repo)
         {
             UserMethods = repo;
         }
         public IActionResult OnGet(int id)
         {
-            Users.FindUser(id);
+            Users = UserMethods.FindUser(id);
             return Page();
         }
         public IActionResult OnPost(Users user)

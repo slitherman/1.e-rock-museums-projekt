@@ -151,7 +151,7 @@ namespace _1.e_Projekt.Services
             Presentations.Remove(id);
         }
 
-        public Exhibition readPresentation(int id)
+        public Exhibition ReadPresentation(int id)
         {
             return Presentations[id];
         }

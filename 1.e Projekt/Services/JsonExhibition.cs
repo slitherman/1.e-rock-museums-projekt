@@ -11,7 +11,7 @@ namespace _1.e_Projekt.Services
     public class JsonExhibition: IExhibition
     {
 
-        string filename = "./Data/JsonExhibitions.json";
+         readonly string filename = "./Data/JsonExhibitions.json";
 
       
 
@@ -107,7 +107,7 @@ namespace _1.e_Projekt.Services
             return ReadToJson();
         }
 
-        public Exhibition readPresentation(int id)
+        public Exhibition ReadPresentation(int id)
         {
             Dictionary<int, Exhibition> Presentations = GetPreentations();
             Exhibition FoundPresentations = Presentations[id];
