@@ -53,10 +53,12 @@ namespace _1.e_Projekt.Pages.MyPages.AoiControllers
             var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
             var claims = new[]
             { // all claimtypes are apparently strings, find out how to add userid and password later or something
+                
                 new Claim(ClaimTypes.NameIdentifier, users.FirstName),
                 new Claim(ClaimTypes.NameIdentifier, users.LastName),
                 new Claim(ClaimTypes.Email, users.Email),
-                   
+                   new Claim(ClaimTypes.Role, users.Role),
+
 
 
             };

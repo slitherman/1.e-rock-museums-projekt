@@ -15,12 +15,13 @@ namespace _1.e_Projekt.Pages.MyPages.ApiControllers
     public class UserApi : ControllerBase
     {
         [HttpGet("Admins")]
-        [Authorize]
+        [Authorize(Roles ="Admin")]
         public IActionResult AdminsEndPoint()
         {
             var currentUser = GetCurrentUser();
-            return Ok($"Hi {currentUser.Email} you are an admin");
+            return Ok($"Hi {currentUser.Email} you are an {currentUser.Role}");
         }
+
 
         public Users GetCurrentUser()
         {
@@ -29,13 +30,13 @@ namespace _1.e_Projekt.Pages.MyPages.ApiControllers
             {
                 var userClaims = userIdentity.Claims;
 
-                // i have no fucking idea what im doing idk if this actually makes any sense
-                // 
+                
                 return new Users
                 {
                     FirstName = userClaims.FirstOrDefault(o => o.Type == ClaimTypes.NameIdentifier)?.Value,
                     LastName = userClaims.FirstOrDefault(o => o.Type == ClaimTypes.NameIdentifier)?.Value,
                     Email = userClaims.FirstOrDefault(o => o.Type == ClaimTypes.Email)?.Value,
+                    Role= userClaims.FirstOrDefault(o => o.Type == ClaimTypes.Role)?.Value,
                 };
                 
             }
