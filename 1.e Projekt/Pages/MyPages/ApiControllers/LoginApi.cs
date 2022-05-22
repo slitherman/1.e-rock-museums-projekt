@@ -56,7 +56,8 @@ namespace _1.e_Projekt.Pages.MyPages.AoiControllers
                 new Claim(ClaimTypes.NameIdentifier, users.FirstName),
                 new Claim(ClaimTypes.NameIdentifier, users.LastName),
                 new Claim(ClaimTypes.Email, users.Email),
-               
+                   
+
 
             };
             var token = new JwtSecurityToken(cfg["Jwt:Issuer"], cfg["Jwt:Audience"],

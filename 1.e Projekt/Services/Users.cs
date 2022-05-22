@@ -30,11 +30,18 @@ namespace _1.e_Projekt.Services
         [DataType(DataType.Password)]
         [RegularExpression("^[0-9]{1.10}")]
         public string Password { get; set; }
+        [DataType(DataType.ImageUrl)]
         public string UserIcon { get; set; }
         [Key]
         [DataType(DataType.Custom)]
         [Required(ErrorMessage = "you must enter something, literally anything")]
         public int UserId { get; set; }
+
+        //given user role. Not every user should have administrative permissions 
+
+        [DataType(DataType.Text)]
+        [StringLength(30, MinimumLength = 3)]
+        public string Role { get; set; }
 
         public Dictionary<int, Users> UserCollection { get; set; }
 
@@ -42,10 +49,10 @@ namespace _1.e_Projekt.Services
         {
             UserCollection = new Dictionary<int, Users>();
 
-            UserCollection.Add(1, new Users() { FirstName = "Lachy", LastName = "Shannon", Email = "lachyshannon@gmail.com", Password = "12345", UserIcon = "UserIcon.png", UserId=1 });
-            UserCollection.Add(2, new Users() { FirstName = "Brandon", LastName = "Mccartney", Email = "brandonmccartney@gmail.com", Password = "44443", UserIcon = "UserIcon.png", UserId=2});
-            UserCollection.Add(3, new Users() { FirstName = "Larry", LastName = "David", Email = "larrydavid@gmail.com", Password = "11111", UserIcon = "UserIcon.png" , UserId=3});
-            UserCollection.Add(4, new Users() { FirstName = "Saloth ", LastName = "Sar", Email = "PolPot@gmail.com", Password = "22222", UserIcon = "UserIcon.png" , UserId=4});
+            UserCollection.Add(1, new Users() { FirstName = "Lachy", LastName = "Shannon", Email = "lachyshannon@gmail.com", Password = "12345", UserIcon = "UserIcon.png", Role="Admin", UserId=1 });
+            UserCollection.Add(2, new Users() { FirstName = "Brandon", LastName = "Mccartney", Email = "brandonmccartney@gmail.com", Password = "44443", UserIcon = "UserIcon.png", Role="Admin", UserId=2});
+            UserCollection.Add(3, new Users() { FirstName = "Larry", LastName = "David", Email = "larrydavid@gmail.com", Password = "11111", UserIcon = "UserIcon.png", Role="User", UserId=3});
+            UserCollection.Add(4, new Users() { FirstName = "Saloth ", LastName = "Sar", Email = "PolPot@gmail.com", Password = "22222", UserIcon = "UserIcon.png", Role="User", UserId=4});
 
         }
 

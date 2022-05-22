@@ -1,4 +1,5 @@
 ﻿using _1.e_Projekt.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -14,13 +15,14 @@ namespace _1.e_Projekt.Pages.MyPages.ApiControllers
     public class UserApi : ControllerBase
     {
         [HttpGet("Admins")]
+        [Authorize]
         public IActionResult AdminsEndPoint()
         {
             var currentUser = GetCurrentUser();
-            return Ok($"Hi {currentUser}");
+            return Ok($"Hi {currentUser.Email} you are an admin");
         }
 
-        public IActionResult GetCurrentUser()
+        public Users GetCurrentUser()
         {
             var userIdentity = HttpContext.User.Identity as ClaimsIdentity;
             if (userIdentity != null)
