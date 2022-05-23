@@ -1,4 +1,5 @@
-﻿using _1.e_Projekt.Services;
+﻿using _1.e_Projekt.Models;
+using _1.e_Projekt.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -23,7 +24,7 @@ namespace _1.e_Projekt.Pages.MyPages.ApiControllers
         }
 
 
-        public Users GetCurrentUser()
+        public User GetCurrentUser()
         {
             var userIdentity = HttpContext.User.Identity as ClaimsIdentity;
             if (userIdentity != null)
@@ -31,7 +32,7 @@ namespace _1.e_Projekt.Pages.MyPages.ApiControllers
                 var userClaims = userIdentity.Claims;
 
                 
-                return new Users
+                return new User
                 {
                     FirstName = userClaims.FirstOrDefault(o => o.Type == ClaimTypes.NameIdentifier)?.Value,
                     LastName = userClaims.FirstOrDefault(o => o.Type == ClaimTypes.NameIdentifier)?.Value,

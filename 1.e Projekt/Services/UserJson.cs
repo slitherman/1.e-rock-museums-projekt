@@ -1,5 +1,6 @@
 ﻿using _1.e_Projekt.Helpers;
 using _1.e_Projekt.Interfaces;
+using _1.e_Projekt.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,40 +13,40 @@ namespace _1.e_Projekt.Services
 
        readonly string filename = "/Data/UserDatabase.json/";
 
-        public void  SaveJson (Dictionary<int, Users> UserCollection)
+        public void  SaveJson (Dictionary<int, User> UserCollection)
         {
             JsonFileWriter.WriteToJson3(UserCollection, filename);
 
         }
-        public Dictionary<int, Users> ReadJson()
+        public Dictionary<int, User> ReadJson()
         {
             return JsonFileReader.ReadJson3(filename);
         }
 
-        public Dictionary<int, Users> GetAllUsers()
+        public Dictionary<int, User> GetAllUsers()
         {
             return ReadJson();
         }
 
-        public Users FindUser(int UserId)
+        public User FindUser(int UserId)
         {
-            Dictionary<int, Users> UserCollection = GetAllUsers();
-            Users FoundUsers = UserCollection[UserId];
+            Dictionary<int, User> UserCollection = GetAllUsers();
+            User FoundUsers = UserCollection[UserId];
             return FoundUsers;
         
         }
 
         public void DeleteUser(int UserId)
         {
-            Dictionary<int, Users> UserCollection = GetAllUsers();
+            Dictionary<int, User> UserCollection = GetAllUsers();
             UserCollection.Remove(UserId);
             JsonFileWriter.WriteToJson3(UserCollection, filename);
 
         }
 
-        public void CreateUser(Users user)
+        public void CreateUser(User user)
         {
-            Dictionary<int, Users> UserCollection = GetAllUsers();
+            Dictionary<int, User> UserCollection = GetAllUsers();
   
             {
                 if(!UserCollection.Keys.Contains(user.UserId))
@@ -57,9 +58,9 @@ namespace _1.e_Projekt.Services
             }
         }
 
-        public void UpdateUserInfo(Users user)
+        public void UpdateUserInfo(User user)
         {
-            Dictionary<int, Users> UserCollection = GetAllUsers();
+            Dictionary<int, User> UserCollection = GetAllUsers();
             foreach (var ids in UserCollection.Values) 
             {
                 if(ids.UserId.Equals(user.UserId))

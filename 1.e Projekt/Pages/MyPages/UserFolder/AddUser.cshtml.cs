@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using _1.e_Projekt.Helpers;
 using _1.e_Projekt.Interfaces;
+using _1.e_Projekt.Models;
 using _1.e_Projekt.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -19,7 +20,7 @@ namespace _1.e_Projekt.Pages.MyPages.UserFolder
         public IUserInterface UserMethods;
         [BindProperty]
         [PageRemote(PageHandler = "IsEmailTaken", HttpMethod ="Get", ErrorMessage ="error email is already in use")]
-        public Users Users { get; set; }
+        public User Users { get; set; }
         public AddUserModel(IUserInterface repo)
         {
             UserMethods = repo;
@@ -34,7 +35,7 @@ namespace _1.e_Projekt.Pages.MyPages.UserFolder
             UserMethods.CreateUser(Users);
             return RedirectToPage("GetUsers");
         }
-        public JsonResult IsEmailTaken(Users Users)
+        public JsonResult IsEmailTaken(User Users)
         {
             string filename = "/Data/UserDatabase.json/";
             JsonFileReader.ReadJson3(filename);

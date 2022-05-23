@@ -1,4 +1,5 @@
 ﻿using _1.e_Projekt.Interfaces;
+using _1.e_Projekt.Models;
 using _1.e_Projekt.Services;
 using Abp.Authorization.Users;
 using Microsoft.AspNetCore.Authorization;
@@ -34,7 +35,7 @@ namespace _1.e_Projekt.Pages.MyPages.AoiControllers
 
         [AllowAnonymous]
         [HttpPost]
-        public IActionResult Login([FromBody] Users Users)
+        public IActionResult Login([FromBody] User Users)
         {
             var user = Authenticater(Users);
             if(user !=null)
@@ -46,7 +47,7 @@ namespace _1.e_Projekt.Pages.MyPages.AoiControllers
           
         }
 
-        private string Generate(Users users)
+        private string Generate(User users)
         {
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(cfg
                    ["Jwt:Key"]));
@@ -71,7 +72,7 @@ namespace _1.e_Projekt.Pages.MyPages.AoiControllers
             return new JwtSecurityTokenHandler().WriteToken(token);   
         }
 
-        private Users Authenticater(Users userLogin)
+        private User Authenticater(User userLogin)
         {
 
             var CurrentUser = CurrentUsers.UserCollection.FirstOrDefault(o => o.Value.Email.ToLower() ==

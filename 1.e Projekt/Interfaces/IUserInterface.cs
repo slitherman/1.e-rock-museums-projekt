@@ -1,4 +1,5 @@
-﻿using _1.e_Projekt.Services;
+﻿using _1.e_Projekt.Models;
+using _1.e_Projekt.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,11 +9,11 @@ namespace _1.e_Projekt.Interfaces
 {
    public interface IUserInterface
     {
-        Dictionary<int, Users> GetAllUsers();
-        Users FindUser(int UserId);
+        Dictionary<int, User> GetAllUsers();
+        User FindUser(int UserId);
         void DeleteUser(int UserId);
-        void CreateUser(Users user);
-        void UpdateUserInfo(Users user);
+        void CreateUser(User user);
+        void UpdateUserInfo(User user);
 
     }
 }

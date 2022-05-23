@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using _1.e_Projekt.Interfaces;
+using _1.e_Projekt.Models;
 using _1.e_Projekt.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -16,7 +17,7 @@ namespace _1.e_Projekt.Pages.MyPages.UserFolder
       
         private readonly IUserInterface UserMethods; 
         [BindProperty(SupportsGet =true)]
-        public Dictionary<int, Users> ExhibitionCollection { get; set; }
+        public Dictionary<int, User> ExhibitionCollection { get; set; }
         public GetUsersModel(IUserInterface repo)
         {
             UserMethods = repo;

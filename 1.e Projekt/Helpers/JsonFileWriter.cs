@@ -27,7 +27,7 @@ namespace _1.e_Projekt.Helpers
 
         }
 
-        public static void WriteToJson3(Dictionary<int, Users> Presentations, string filename)
+        public static void WriteToJson3(Dictionary<int, User> Presentations, string filename)
         {
             string output = Newtonsoft.Json.JsonConvert.SerializeObject(Presentations, Newtonsoft.Json.Formatting.Indented);
 

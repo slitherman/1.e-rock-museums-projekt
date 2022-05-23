@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using _1.e_Projekt.Interfaces;
+using _1.e_Projekt.Models;
 using _1.e_Projekt.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -15,7 +16,7 @@ namespace _1.e_Projekt.Pages.MyPages.UserFolder
     {
         private readonly IUserInterface UserMethods;
         [BindProperty]
-        public Users Users { get; set; }
+        public User Users { get; set; }
         public UpdateUserModel(IUserInterface repo)
         {
             UserMethods = repo;
@@ -25,9 +26,9 @@ namespace _1.e_Projekt.Pages.MyPages.UserFolder
             Users = UserMethods.FindUser(id);
             return Page();
         }
-        public IActionResult OnPost(Users user)
+        public IActionResult OnPost()
         {
-            Users.UpdateUserInfo(user);
+            UserMethods.UpdateUserInfo(Users);
             return RedirectToAction("GetUsers");
         }
     }
