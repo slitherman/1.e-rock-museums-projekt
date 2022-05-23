@@ -22,7 +22,7 @@ namespace _1.e_Projekt.Services
 
         }
 
-        public Dictionary<int, Exhibition> ReadToJson()
+        public Dictionary<int, Exhibition> ReadToJson() 
         {
             return JsonFileReader.ReadJson(filename);
 
@@ -50,7 +50,7 @@ namespace _1.e_Projekt.Services
             Dictionary<int, Exhibition> Exhibitions = GetExhibitions();
             foreach (var ids in Exhibitions.Values)
             {
-                 if(ids.ExhibitionId.Equals(ex.ExhibitionId))
+                 if(!ids.ExhibitionId.Equals(ex.ExhibitionId))
                 {
                     Exhibitions.Add(ex.ExhibitionId, ex);
                     JsonFileWriter.WriteToJson(Exhibitions, filename);

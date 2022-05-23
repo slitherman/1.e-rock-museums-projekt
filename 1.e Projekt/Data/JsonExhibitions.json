@@ -1,29 +1,37 @@
 {
   "1": {
-
     "ExhibitionId": 1,
     "ExhibitionName": "Rockens opstart",
+    "PresentationName": null,
+    "PresentationId": 0,
     "ImageName": "Rock"
-
   },
   "2": {
-
     "ExhibitionId": 2,
-    "ExhibitionName": "Musik før 2.Verdenskrig",
+    "ExhibitionName": "Musik fï¿½r 2.Verdenskrig",
+    "PresentationName": null,
+    "PresentationId": 0,
     "ImageName": "Jazz"
-
   },
   "3": {
-
     "ExhibitionId": 3,
     "ExhibitionName": "Protestmusikken i 60'erne",
+    "PresentationName": null,
+    "PresentationId": 0,
     "ImageName": "Protest"
-
   },
   "4": {
     "ExhibitionId": 3,
-    "ExhibitionName": "Stoffers indflydelse på musik ",
+    "ExhibitionName": "Stoffers indflydelse pï¿½ musik ",
+    "PresentationName": null,
+    "PresentationId": 0,
     "ImageName": "."
-
+  },
+  "3242": {
+    "ExhibitionId": 3242,
+    "ExhibitionName": "sadadaad",
+    "PresentationName": null,
+    "PresentationId": 0,
+    "ImageName": "sdadaadda"
   }
 }

@@ -18,7 +18,7 @@ namespace _1.e_Projekt.Models
         [Required(ErrorMessage = "Exhibition Name is required")]
         [DisplayName("Exhibition´Name")]
         [StringLength(60, MinimumLength = 3)]
-
+    
         public string ExhibitionName { get; set; }
         [Required(ErrorMessage = "Presentation Name  is required")]
         [DisplayName("Presentation Name")]

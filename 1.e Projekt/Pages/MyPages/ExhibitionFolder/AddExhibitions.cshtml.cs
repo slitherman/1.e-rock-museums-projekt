@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace _1.e_Projekt.Pages.MyPages
 {
-    [Authorize]
+    //[Authorize]
     public class AddExhibitionsModel : PageModel
     {
         
@@ -35,7 +35,6 @@ namespace _1.e_Projekt.Pages.MyPages
 
         public IActionResult OnPost()
         {
-
             Exhibition.AddExhibition(AddedExhibition);
             return RedirectToPage("GetExhibitions");
         }

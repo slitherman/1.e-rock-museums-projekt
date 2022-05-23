@@ -8,6 +8,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using _1.e_Projekt.Helpers;
 
 namespace _1.e_Projekt.Services
 {
@@ -76,6 +77,7 @@ namespace _1.e_Projekt.Services
             {
                 Exhibitions.Add(ex.ExhibitionId, ex);
             }
+          
         }
       
         public void UpdateExhibition (Exhibition ex)
