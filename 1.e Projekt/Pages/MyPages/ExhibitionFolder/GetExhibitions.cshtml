@@ -4,31 +4,33 @@
 }
 
 <h1>  List Of Exhibitions  </h1>
-<div class="d-flex flex-column-reverse">
-    <div class="p-2">Exhibition Id </div>
-    <div class="p-2">Exhibition Name</div>
-    <div class="p-2">Image</div>
+
 
     @foreach (var item in Model.ExhibitionCollection)
     {
-        <div class="d-flex flex-column-reverse">
-            <div class="p-2">@item.Value.ExhibitionId</div>
-            <div class="p-2">@item.Value.ExhibitionName</div>
-            <div class="p-2">@item.Value.ImageName</div>
-            <div class="p-2">
-                <img src="~/Images/@item.Value.ImageName" width="80" height="80">
+  
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    @item.Value.ExhibitionId
+                    @item.Value.ExhibitionName
+                    @item.Value.ImageName
+                </div>
+                <div class="col-sm">
+                    @item.Value.ExhibitionId
+                    @item.Value.ExhibitionName
+                    @item.Value.ImageName
+                </div>
+                <div class="col-sm">
+                    @item.Value.ExhibitionId
+                    @item.Value.ExhibitionName
+                    @item.Value.ImageName
+                </div>
             </div>
-
-            <div class="p-2">
-                <a asp-page="DeleteExhibitions" asp-id="@item.Key">delete an exhibition</a>
-            </div>
-
-            <div class="p-2">
-                <a asp-page="DeleteExhibitions" asp-id="@item.Key">delete an exhibition</a>
-            </div>
-            <div class="p-2"><a asp-page="UpdateExhibitions" asp-id="@item.Key">delete an exhibition</a>  </div>
-
         </div>
+
+
+
 
     }
 
