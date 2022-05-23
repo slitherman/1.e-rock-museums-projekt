@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using _1.e_Projekt.Interfaces;
+using _1.e_Projekt.Models;
 using _1.e_Projekt.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -13,11 +14,11 @@ namespace _1.e_Projekt.Pages.MyPages
     [Authorize]
     public class UpdateExhibitionsModel : PageModel
     {
-        public IExhibition Exhibition;
+        public IExhibitionRepo Exhibition;
         [BindProperty]
         public Exhibition UpdatedExhibition { get; set; }
 
-        public UpdateExhibitionsModel(IExhibition repo)
+        public UpdateExhibitionsModel(IExhibitionRepo repo)
         {
             Exhibition = repo;
         }

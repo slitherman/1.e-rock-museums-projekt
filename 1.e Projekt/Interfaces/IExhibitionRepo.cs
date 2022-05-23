@@ -1,4 +1,5 @@
-﻿using _1.e_Projekt.Services;
+﻿using _1.e_Projekt.Models;
+using _1.e_Projekt.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace _1.e_Projekt.Interfaces
 {
-    public interface IExhibition
+    public interface IExhibitionRepo
     {
         Exhibition GetExhibition(int id);
         void DeleteExhibition(int id);

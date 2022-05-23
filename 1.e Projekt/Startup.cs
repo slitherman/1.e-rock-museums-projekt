@@ -30,8 +30,8 @@ namespace _1.e_Projekt
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
-            services.AddSingleton<IExhibition,Exhibition>();
-            services.AddTransient<IExhibition, JsonExhibition>();
+            services.AddSingleton<IExhibitionRepo,ExhibitionRepo>();
+            services.AddTransient<IExhibitionRepo, JsonExhibition>();
             services.AddSingleton<IUserInterface, Users>();
             services.AddTransient<IUserInterface, UserJson>();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>

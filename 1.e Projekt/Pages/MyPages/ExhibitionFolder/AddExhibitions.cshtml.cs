@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using _1.e_Projekt.Helpers;
 using _1.e_Projekt.Interfaces;
+using _1.e_Projekt.Models;
 using _1.e_Projekt.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -11,28 +12,32 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace _1.e_Projekt.Pages.MyPages
 {
-    [Authorize]
+    //[Authorize]
     public class AddExhibitionsModel : PageModel
     {
         
-        public IExhibition Exhibition;
-        [BindProperty]
+        public IExhibitionRepo Exhibition;
+        
         [PageRemote(PageHandler = " IsExhibitionNameInUse ", HttpMethod ="Get", ErrorMessage ="Exhibition name is already in use")]
+        
+        [BindProperty]
         public Exhibition AddedExhibition { get; set; }
 
-        public AddExhibitionsModel(IExhibition repo)
+        public AddExhibitionsModel(IExhibitionRepo repo)
         {
             Exhibition = repo;
         }
         public IActionResult OnGet()
         {
+       
             return Page();
         }
 
-        public IActionResult OnPost(Exhibition ex)
+        public IActionResult OnPost()
         {
-            AddedExhibition.AddExhibition(ex);
-            return RedirectToPage("GetAllExhibitions");
+
+            Exhibition.AddExhibition(AddedExhibition);
+            return RedirectToPage("GetExhibitions");
         }
         public JsonResult IsExhibitionNameInUse (Exhibition ex)
         {

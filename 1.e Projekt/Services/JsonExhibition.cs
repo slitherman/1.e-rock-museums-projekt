@@ -5,19 +5,20 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using _1.e_Projekt.Models;
 
 namespace _1.e_Projekt.Services
 {
-    public class JsonExhibition: IExhibition
+    public class JsonExhibition: IExhibitionRepo
     {
 
-         readonly string filename = "./Data/JsonExhibitions.json";
+         readonly string filename = "Data/JsonExhibitions.json";
 
       
 
         public void SaveToJson(Dictionary<int, Exhibition> Exhibitions)
         {
-            JsonFileWriter.WriteToJson(Exhibitions, filename);
+            JsonFileWriter.WriteToJson(Exhibitions , filename);
 
         }
 

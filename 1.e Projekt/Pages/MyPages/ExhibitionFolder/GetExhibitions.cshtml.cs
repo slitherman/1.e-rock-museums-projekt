@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using _1.e_Projekt.Interfaces;
+using _1.e_Projekt.Models;
 using _1.e_Projekt.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -13,9 +14,9 @@ namespace _1.e_Projekt.Pages.MyPages
     [AllowAnonymous]
     public class GetExhibitionsModel : PageModel
     {
-        public IExhibition Exhibition;
+        public IExhibitionRepo Exhibition;
 
-        public GetExhibitionsModel(IExhibition  repo)
+        public GetExhibitionsModel(IExhibitionRepo  repo)
         {
             Exhibition = repo;
 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using _1.e_Projekt.Helpers;
 using _1.e_Projekt.Interfaces;
+using _1.e_Projekt.Models;
 using _1.e_Projekt.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -15,11 +16,11 @@ namespace _1.e_Projekt.Pages.MyPages.PresentationFolder
     public class AddPresentationModel : PageModel
     {
 
-        private readonly IExhibition PresentationMethods;
+        private readonly IExhibitionRepo PresentationMethods;
         [BindProperty]
         [PageRemote(PageHandler = " IsPresentationNameTaken", HttpMethod ="Get", ErrorMessage ="Error presentation already exists")]
         public Exhibition Presentation { get; set; }
-        public AddPresentationModel(IExhibition repo)
+        public AddPresentationModel(IExhibitionRepo repo)
         {
             PresentationMethods = repo;
         }

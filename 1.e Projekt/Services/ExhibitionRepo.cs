@@ -1,4 +1,5 @@
 ﻿using _1.e_Projekt.Interfaces;
+using _1.e_Projekt.Models;
 using Microsoft.AspNetCore.Authorization;
 using System;
 using System.Collections.Generic;
@@ -10,35 +11,13 @@ using Xamarin.Forms;
 
 namespace _1.e_Projekt.Services
 {
-    public class Exhibition: IExhibition
+    public class ExhibitionRepo: IExhibitionRepo
     {
        public Dictionary<int, Exhibition> Exhibitions { get; set; }
-        public Dictionary<int, Exhibition> Presentations { get; set; }
-        [Key]
-        [Required(ErrorMessage ="ExhibitionId is required")]
-        [DisplayName("ExhibitionId")]
-   
-        public int ExhibitionId { get; set; }
-        [Required(ErrorMessage = "Exhibition Name is required")]
-        [DisplayName("Exhibition´Name")]
-        [StringLength(60, MinimumLength =3)]
-
-        public string ExhibitionName { get; set; }
-        [Required(ErrorMessage = "Presentation Name  is required")]
-        [DisplayName("Presentation Name")]
-        [StringLength(60, MinimumLength = 3)]
-        public string PresentationName { get; set; }
-        [Key]
-        [Required(ErrorMessage = "Presentation Id is required")]
-        [DisplayName("Presentation Id")]
-        public int PresentationId { get; set; }
-
-        [DisplayName("Image Name")]   
-        public string ImageName { get; set; }
-        //not currently in use, might use it again later
-        public int CtorId { get; set; }
-        //bruger et ctorid pga inheritance. Det ville se dumt ud af skulle bruge de andre variabler.
-        public Exhibition()
+       public Dictionary<int, Exhibition> Presentations { get; set; }
+        
+ 
+        public ExhibitionRepo()
         {
 
 
@@ -56,17 +35,17 @@ namespace _1.e_Projekt.Services
                 Presentations.Add(4, new Exhibition() { PresentationId = 1, PresentationName = " Oplæg Om Stoffers Indflydelse På Musik", ImageName = "Woodstock.jpg" });
             foreach (var ids in Presentations.Values)
             {
-                if(ids.PresentationId.Equals(ExhibitionId))
+                if(ids.PresentationId.Equals(ids.ExhibitionId))
                {
 
                   var CombinedCollections = Presentations.Concat(Exhibitions.Where(kvp => !Presentations.ContainsKey(kvp.Key)));
 
 
                }
-                if (Presentations.Keys.Contains(PresentationId))
+                if (Presentations.Keys.Contains(ids.PresentationId))
                 {
-                    if (!ids.PresentationId.Equals(ExhibitionId))
-                    {
+                    if (!ids.PresentationId.Equals(ids.ExhibitionId))
+                   {
                         throw new Exception(" error presentation doesnt have an exhibition assigned to it");
                     }
                 }
@@ -93,9 +72,9 @@ namespace _1.e_Projekt.Services
       
         public void AddExhibition(Exhibition ex)
         {
-            if(!Exhibitions.Keys.Contains(ExhibitionId))
+            if(!Exhibitions.Keys.Contains(ex.ExhibitionId))
             {
-                Exhibitions.Add(ExhibitionId, ex);
+                Exhibitions.Add(ex.ExhibitionId, ex);
             }
         }
       
@@ -122,7 +101,7 @@ namespace _1.e_Projekt.Services
         {
             if (!Presentations.Keys.Contains(pre.ExhibitionId))
             {
-                Presentations.Add(PresentationId, pre);
+                Presentations.Add(pre.ExhibitionId, pre);
             }
         }
       
