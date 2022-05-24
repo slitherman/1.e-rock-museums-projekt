@@ -42,12 +42,14 @@ namespace _1.e_Projekt.Services
         {
             UserCollection.Remove(UserId);
         } 
+        //???
         public void CreateUser(User user)
         {
-           if(!UserCollection.Keys.Contains(user.UserId))
+           if(!UserCollection.Keys.ToList().Contains(user.UserId))
             {
 
                 Random RndiD = new Random();
+                RndiD.Equals(UserCollection[user.UserId]);
                 RndiD.Equals(user.UserId);
                 UserCollection.Add(RndiD.Next(), user);
 

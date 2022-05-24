@@ -70,10 +70,10 @@ namespace _1.e_Projekt.Services
         {
             Exhibitions.Remove(id);
         }
-      
+      //???
         public void AddExhibition(Exhibition ex)
         {
-            if(!Exhibitions.Keys.Contains(ex.ExhibitionId))
+            if(!Exhibitions.Keys.ToList().Contains(ex.ExhibitionId))
             {
                 Exhibitions.Add(ex.ExhibitionId, ex);
             }
@@ -101,7 +101,7 @@ namespace _1.e_Projekt.Services
       
         public void AddPresentation(Exhibition pre)
         {
-            if (!Presentations.Keys.Contains(pre.ExhibitionId))
+            if (!Presentations.Keys.ToList().Contains(pre.ExhibitionId))
             {
                 Presentations.Add(pre.ExhibitionId, pre);
             }
