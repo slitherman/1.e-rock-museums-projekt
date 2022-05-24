@@ -38,7 +38,7 @@ namespace _1.e_Projekt.Models
         [Key]
         [DataType(DataType.Custom)]
         [Required(ErrorMessage = "you must enter something, literally anything")]
-        public Random UserId { get; set; }
+        public int UserId { get; set; }
 
         //given user role. Not every user should have administrative permissions 
 
