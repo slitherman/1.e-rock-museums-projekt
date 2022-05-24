@@ -48,7 +48,7 @@ namespace _1.e_Projekt.Services
         public void AddExhibition(Exhibition ex)
         {
             Dictionary<int, Exhibition> Exhibitions = GetExhibitions();
-            foreach (var ids in Exhibitions.Values)
+            foreach (var ids in Exhibitions.Values.ToList())
             {
                  if(!ids.ExhibitionId.Equals(ex.ExhibitionId))
                 {

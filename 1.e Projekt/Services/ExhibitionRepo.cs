@@ -126,7 +126,7 @@ namespace _1.e_Projekt.Services
             }
         }
 
-     
+
         public void DeletePresentation(int id)
         {
             Presentations.Remove(id);
@@ -141,8 +141,8 @@ namespace _1.e_Projekt.Services
             return Presentations;
         }
 
-
-
     }
+
+    
 }
 

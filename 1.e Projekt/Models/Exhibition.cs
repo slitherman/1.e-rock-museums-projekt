@@ -32,5 +32,7 @@ namespace _1.e_Projekt.Models
         [DisplayName("Image Name")]
         public string ImageName { get; set; }
 
+
+      
     }
 }
