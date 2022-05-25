@@ -10,8 +10,8 @@ namespace _1.e_Projekt.Services
 {
     public class UserJson: IUserInterface
     {
-
-       readonly string filename = "/Data/UserDatabase.json/";
+        Random RndiD = new Random();
+        readonly string filename = "/Data/UserDatabase.json/";
 
         public void  SaveJson (Dictionary<int, User> UserCollection)
         {
@@ -52,7 +52,10 @@ namespace _1.e_Projekt.Services
                 if(!UserCollection.Keys.Contains(user.UserId))
               
                 {
-                    UserCollection.Add(user.UserId, user);
+                    
+                    RndiD.Equals(UserCollection[user.UserId]);
+                    RndiD.Equals(user.UserId);
+                    UserCollection.Add(RndiD.Next(), user);
                     JsonFileWriter.WriteToJson3(UserCollection, filename);
                 }
             }

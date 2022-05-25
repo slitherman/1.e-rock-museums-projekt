@@ -61,5 +61,26 @@
     "PresentationName": null,
     "PresentationId": 0,
     "ImageName": "d"
+  },
+  "11": {
+    "ExhibitionId": 11,
+    "ExhibitionName": "655665",
+    "PresentationName": null,
+    "PresentationId": 0,
+    "ImageName": "dasdas"
+  },
+  "0": {
+    "ExhibitionId": 0,
+    "ExhibitionName": "sdaaasd",
+    "PresentationName": null,
+    "PresentationId": 0,
+    "ImageName": "dsad"
+  },
+  "8778565": {
+    "ExhibitionId": 8778565,
+    "ExhibitionName": "haha2",
+    "PresentationName": null,
+    "PresentationId": 0,
+    "ImageName": "7"
   }
 }

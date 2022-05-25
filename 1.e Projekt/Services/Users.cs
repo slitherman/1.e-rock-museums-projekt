@@ -7,6 +7,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using _1.e_Projekt.Models;
+using _1.e_Projekt.Helpers;
 
 namespace _1.e_Projekt.Services
 {
@@ -15,11 +16,13 @@ namespace _1.e_Projekt.Services
      
 
       public Dictionary<int, User> UserCollection { get; set; }
-      
+      public Random RndiD = new Random();
+
 
         public Users()
         {
-            Random RndiD = new Random();
+         
+       
             UserCollection = new Dictionary<int, User>();
 
             UserCollection.Add(1, new User() { FirstName = "Lachy", LastName = "Shannon", Email = "lachyshannon@gmail.com", Password = "12345", UserIcon = "UserIcon.png", Role="Admin", UserId= RndiD.Next() });
@@ -47,8 +50,6 @@ namespace _1.e_Projekt.Services
         {
            if(!UserCollection.Keys.ToList().Contains(user.UserId))
             {
-
-                Random RndiD = new Random();
                 RndiD.Equals(UserCollection[user.UserId]);
                 RndiD.Equals(user.UserId);
                 UserCollection.Add(RndiD.Next(), user);
