@@ -39,7 +39,8 @@ namespace _1.e_Projekt.Services
                 if(ids.PresentationId.Equals(ids.ExhibitionId))
                {
 
-                  var CombinedCollections = Presentations.Concat(Exhibitions.Where(kvp => !Presentations.ContainsKey(kvp.Key)));
+                    //var CombinedCollections = Presentations.Concat(Exhibitions.Where(kvp => Presentations.ContainsKey(kvp.Key)));
+                    Presentations.ToList().ForEach(x => Exhibitions.Add(x.Key, x.Value));
 
 
                }

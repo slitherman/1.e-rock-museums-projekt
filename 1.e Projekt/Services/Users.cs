@@ -15,24 +15,37 @@ namespace _1.e_Projekt.Services
     {
      
 
-      public Dictionary<int, User> UserCollection { get; set; }
+      public List<User> UserCollection { get; set; }
       public Random RndiD = new Random();
+        private int _counter = 0;
 
+        public int UniqueID
+        {
+            get
+            {
+                return _counter++;
+            }
+        }
 
         public Users()
         {
          
        
-            UserCollection = new Dictionary<int, User>();
+            UserCollection = new List<User>();
 
-            UserCollection.Add(1, new User() { FirstName = "Lachy", LastName = "Shannon", Email = "lachyshannon@gmail.com", Password = "12345", UserIcon = "UserIcon.png", Role="Admin", UserId= RndiD.Next() });
-            UserCollection.Add(2, new User() { FirstName = "Brandon", LastName = "Mccartney", Email = "brandonmccartney@gmail.com", Password = "44443", UserIcon = "UserIcon.png", Role="Admin", UserId= RndiD.Next() });
-            UserCollection.Add(3, new User() { FirstName = "Larry", LastName = "David", Email = "larrydavid@gmail.com", Password = "11111", UserIcon = "UserIcon.png", Role="User", UserId= RndiD.Next() });
-            UserCollection.Add(4, new User() { FirstName = "Saloth ", LastName = "Sar", Email = "PolPot@gmail.com", Password = "22222", UserIcon = "UserIcon.png", Role="User", UserId=RndiD.Next()});
+            UserCollection.Add(new User() { FirstName = "Lachy", LastName = "Shannon", Email = "lachyshannon@gmail.com", Password = "12345", UserIcon = "UserIcon.png", Role="Admin", UserId= UniqueID });
+            UserCollection.Add(new User() { FirstName = "Brandon", LastName = "Mccartney", Email = "brandonmccartney@gmail.com", Password = "44443", UserIcon = "UserIcon.png", Role="Admin", UserId= UniqueID });
+            UserCollection.Add(new User() { FirstName = "Larry", LastName = "David", Email = "larrydavid@gmail.com", Password = "11111", UserIcon = "UserIcon.png", Role="User", UserId= UniqueID });
+            UserCollection.Add(new User() { FirstName = "Saloth ", LastName = "Sar", Email = "PolPot@gmail.com", Password = "22222", UserIcon = "UserIcon.png", Role="User", UserId= UniqueID });
 
         }
 
-        public Dictionary<int, User> GetAllUsers()
+
+        public void GetRandId()
+        {
+          
+        } 
+        public List<User> GetAllUsers()
         {
             return UserCollection;
         }
@@ -43,22 +56,26 @@ namespace _1.e_Projekt.Services
         }
         public void DeleteUser( int UserId)
         {
-            UserCollection.Remove(UserId);
+            UserCollection.RemoveAt(UserId);
         } 
         //???
         public void CreateUser(User user)
         {
-           if(!UserCollection.Keys.ToList().Contains(user.UserId))
+            if(user.UserId >= 0 && user.UserId < _counter)
             {
-                RndiD.Equals(UserCollection[user.UserId]);
-                RndiD.Equals(user.UserId);
-                UserCollection.Add(RndiD.Next(), user);
-
+                user.UserId = UniqueID;
+                UserCollection.Add(user);
             }
+           //if(!UserCollection.Keys.ToList().Contains(user.UserId))
+           // {
+           //     RndiD.Equals(UserCollection[user.UserId]);
+           //     RndiD.Equals(user.UserId);
+           //     UserCollection.Add(RndiD.Next(), user);
+           // }
         }
         public void UpdateUserInfo(User user)
         {
-            foreach (var ids in UserCollection.Values)
+            foreach (var ids in UserCollection)
             {
                 if (ids.UserId.Equals(user.UserId))
                 {

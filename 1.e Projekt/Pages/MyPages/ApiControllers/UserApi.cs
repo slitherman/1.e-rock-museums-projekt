@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace _1.e_Projekt.Pages.MyPages.ApiControllers
 {
-    [Route("api/[controller]")]
+    [Route("api/users")]
     [ApiController]
     public class UserApi : ControllerBase
     {

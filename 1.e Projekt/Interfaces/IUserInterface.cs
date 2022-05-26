@@ -9,7 +9,7 @@ namespace _1.e_Projekt.Interfaces
 {
    public interface IUserInterface
     {
-        Dictionary<int, User> GetAllUsers();
+        List<User> GetAllUsers();
         User FindUser(int UserId);
         void DeleteUser(int UserId);
         void CreateUser(User user);

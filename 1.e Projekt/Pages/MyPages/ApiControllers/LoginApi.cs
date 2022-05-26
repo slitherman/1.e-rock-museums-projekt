@@ -17,7 +17,7 @@ using System.Threading.Tasks;
 
 namespace _1.e_Projekt.Pages.MyPages.AoiControllers
 {
-    [Route("api/[controller]")]
+    [Route("api/login")]
     [ApiController]
     public class LoginApi : ControllerBase
     {
