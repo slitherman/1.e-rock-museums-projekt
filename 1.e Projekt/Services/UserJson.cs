@@ -22,40 +22,40 @@ namespace _1.e_Projekt.Services
 
         readonly string filename = "/Data/UserDatabase.json/";
 
-        public void  SaveJson (List<User> UserCollection)
+        public void  SaveJson (List<UserModel> UserCollection)
         {
             JsonFileWriter.WriteToJson3(UserCollection, filename);
 
         }
-        public List<User> ReadJson()
+        public List<UserModel> ReadJson()
         {
             return JsonFileReader.ReadJson3(filename);
         }
 
-        public List<User> GetAllUsers()
+        public List<UserModel> GetAllUsers()
         {
             return ReadJson();
         }
 
-        public User FindUser(int UserId)
+        public UserModel FindUser(int UserId)
         {
-            List<User> UserCollection = GetAllUsers();
-            User FoundUsers = UserCollection[UserId];
+            List<UserModel> UserCollection = GetAllUsers();
+            UserModel FoundUsers = UserCollection[UserId];
             return FoundUsers;
         
         }
 
         public void DeleteUser(int UserId)
         {
-            List<User> UserCollection = GetAllUsers();
+            List<UserModel> UserCollection = GetAllUsers();
             UserCollection.RemoveAt(UserId);
             JsonFileWriter.WriteToJson3(UserCollection, filename);
 
         }
 
-        public void CreateUser(User user)
+        public void CreateUser(UserModel user)
         {
-            List<User> UserCollection = GetAllUsers();
+            List<UserModel> UserCollection = GetAllUsers();
   
             {
                 if(user.UserId >= 0 && user.UserId < _counter)
@@ -71,24 +71,25 @@ namespace _1.e_Projekt.Services
             }
         }
 
-        public void UpdateUserInfo(User user)
+        public void UpdateUserInfo(UserModel user)
         {
-            List<User> UserCollection = GetAllUsers();
+            List<UserModel> UserCollection = GetAllUsers();
             foreach (var ids in UserCollection) 
             {
-                if(ids.UserId.Equals(user.UserId))
-                {
-                    ids.FirstName = user.FirstName;
-                    ids.LastName = user.LastName;
-                    ids.Email = user.Email;
-                    ids.Password = user.Password;
-                    ids.UserIcon = user.UserIcon;
-                    JsonFileWriter.WriteToJson3(UserCollection, filename);
-                }
-                if(!ids.UserId.Equals(user.UserId))
-                {
-                    throw new Exception("error");
-                }
+                //if(ids.UserId.Equals(user.UserId))
+                //{
+                //    ids.FirstName = user.FirstName;
+                //    ids.LastName = user.LastName;
+                //    ids.Email = user.Email;
+                //    ids.Password = user.Password;
+                //    ids.UserIcon = user.UserIcon;
+                //    JsonFileWriter.WriteToJson3(UserCollection, filename);
+                //}
+                //if(!ids.UserId.Equals(user.UserId))
+                //{
+                //    throw new Exception("error");
+                //}
+                UserCollection[user.UserId] = user;
             }
             }
         }

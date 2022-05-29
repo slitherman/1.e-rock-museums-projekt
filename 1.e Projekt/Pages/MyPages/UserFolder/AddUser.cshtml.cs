@@ -17,13 +17,19 @@ namespace _1.e_Projekt.Pages.MyPages.UserFolder
     [Authorize]
     public class AddUserModel : PageModel
     {
+        private UserManager<IdentityUser> userManager;
+        private UserManager<IdentityUser> signInManeger;
+
         public IUserInterface UserMethods;
         [BindProperty]
         [PageRemote(PageHandler = "IsEmailTaken", HttpMethod ="Get", ErrorMessage ="error email is already in use")]
-        public User Users { get; set; }
-        public AddUserModel(IUserInterface repo)
+        public UserModel AddedUsers { get; set; }
+        public AddUserModel(IUserInterface repo, UserManager<IdentityUser> userManager, UserManager<IdentityUser> signInManeger)
         {
             UserMethods = repo;
+            this.userManager = userManager;
+            this.signInManeger = signInManeger;
+
         }
         public IActionResult OnGet()
         {
@@ -31,11 +37,26 @@ namespace _1.e_Projekt.Pages.MyPages.UserFolder
         }
         public IActionResult OnPost()
         {
-            
-            UserMethods.CreateUser(Users);
-            return RedirectToPage("GetUsers");
+            if (ModelState.IsValid)
+            {
+                var user = new UserModel()
+                {
+                    FirstName= AddedUsers.FirstName,
+                    LastName = AddedUsers.LastName,
+
+                     Email = AddedUsers.Email,
+                     Password= AddedUsers.Password,
+                    ConfirmPassword= AddedUsers.ConfirmPassword
+                  
+
+                };
+
+             UserMethods.CreateUser(AddedUsers);
+              return RedirectToPage("GetUsers");
+            }
+            return Page();
         }
-        public JsonResult IsEmailTaken(User Users)
+        public JsonResult IsEmailTaken(UserModel Users)
         {
             string filename = "/Data/UserDatabase.json/";
             JsonFileReader.ReadJson3(filename);

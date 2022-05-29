@@ -24,7 +24,7 @@ namespace _1.e_Projekt.Pages.MyPages.ApiControllers
         }
 
 
-        public User GetCurrentUser()
+        public UserModel GetCurrentUser()
         {
             var userIdentity = HttpContext.User.Identity as ClaimsIdentity;
             if (userIdentity != null)
@@ -32,7 +32,7 @@ namespace _1.e_Projekt.Pages.MyPages.ApiControllers
                 var userClaims = userIdentity.Claims;
 
                 
-                return new User
+                return new UserModel
                 {
                     FirstName = userClaims.FirstOrDefault(o => o.Type == ClaimTypes.NameIdentifier)?.Value,
                     LastName = userClaims.FirstOrDefault(o => o.Type == ClaimTypes.NameIdentifier)?.Value,

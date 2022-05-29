@@ -16,7 +16,7 @@ namespace _1.e_Projekt.Pages.MyPages.UserFolder
     {
         private readonly IUserInterface UserMethods;
         [BindProperty]
-        public User Users { get; set; }
+        public UserModel Users { get; set; }
         public UpdateUserModel(IUserInterface repo)
         {
             UserMethods = repo;

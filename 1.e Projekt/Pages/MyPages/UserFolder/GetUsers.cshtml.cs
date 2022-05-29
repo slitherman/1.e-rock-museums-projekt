@@ -17,7 +17,7 @@ namespace _1.e_Projekt.Pages.MyPages.UserFolder
       
         private readonly IUserInterface UserMethods; 
         [BindProperty(SupportsGet =true)]
-        public List<User> UserCollection { get; set; }
+        public List<UserModel> UserCollection { get; set; }
         public GetUsersModel(IUserInterface repo)
         {
             UserMethods = repo;

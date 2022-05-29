@@ -35,7 +35,7 @@ namespace _1.e_Projekt.Pages.MyPages.AoiControllers
 
         [AllowAnonymous]
         [HttpPost]
-        public IActionResult Login([FromBody] User Users)
+        public IActionResult Login([FromBody] UserModel Users)
         {
             var user = Authenticater(Users);
             if(user !=null)
@@ -47,7 +47,7 @@ namespace _1.e_Projekt.Pages.MyPages.AoiControllers
           
         }
 
-        private string Generate(User users)
+        private string Generate(UserModel users)
         {
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(cfg
                    ["Jwt:Key"]));
@@ -72,7 +72,7 @@ namespace _1.e_Projekt.Pages.MyPages.AoiControllers
             return new JwtSecurityTokenHandler().WriteToken(token);   
         }
 
-        private User Authenticater(User userLogin)
+        private UserModel Authenticater(UserModel userLogin)
         {
 
             var CurrentUser = CurrentUsers.UserCollection.FirstOrDefault(o => o.Email.ToLower() ==

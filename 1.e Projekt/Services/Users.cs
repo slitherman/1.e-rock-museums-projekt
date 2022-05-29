@@ -15,7 +15,7 @@ namespace _1.e_Projekt.Services
     {
      
 
-      public List<User> UserCollection { get; set; }
+      public List<UserModel> UserCollection { get; set; }
       public Random RndiD = new Random();
         private int _counter = 0;
 
@@ -31,26 +31,26 @@ namespace _1.e_Projekt.Services
         {
          
        
-            UserCollection = new List<User>();
+            UserCollection = new List<UserModel>();
 
-            UserCollection.Add(new User() { FirstName = "Lachy", LastName = "Shannon", Email = "lachyshannon@gmail.com", Password = "12345", UserIcon = "UserIcon.png", Role="Admin", UserId= UniqueID });
-            UserCollection.Add(new User() { FirstName = "Brandon", LastName = "Mccartney", Email = "brandonmccartney@gmail.com", Password = "44443", UserIcon = "UserIcon.png", Role="Admin", UserId= UniqueID });
-            UserCollection.Add(new User() { FirstName = "Larry", LastName = "David", Email = "larrydavid@gmail.com", Password = "11111", UserIcon = "UserIcon.png", Role="User", UserId= UniqueID });
-            UserCollection.Add(new User() { FirstName = "Saloth ", LastName = "Sar", Email = "PolPot@gmail.com", Password = "22222", UserIcon = "UserIcon.png", Role="User", UserId= UniqueID });
+            UserCollection.Add(new UserModel() { FirstName = "Lachy", LastName = "Shannon", Email = "lachyshannon@gmail.com", Password = "12345", UserIcon = "UserIcon.png", Role="Admin", UserId= UniqueID });
+            UserCollection.Add(new UserModel() { FirstName = "Brandon", LastName = "Mccartney", Email = "brandonmccartney@gmail.com", Password = "44443", UserIcon = "UserIcon.png", Role="Admin", UserId= UniqueID });
+            UserCollection.Add(new UserModel() { FirstName = "Larry", LastName = "David", Email = "larrydavid@gmail.com", Password = "11111", UserIcon = "UserIcon.png", Role="User", UserId= UniqueID });
+            UserCollection.Add(new UserModel() { FirstName = "Saloth ", LastName = "Sar", Email = "PolPot@gmail.com", Password = "22222", UserIcon = "UserIcon.png", Role="User", UserId= UniqueID });
 
         }
 
-
+       
         public void GetRandId()
         {
           
         } 
-        public List<User> GetAllUsers()
+        public List<UserModel> GetAllUsers()
         {
             return UserCollection;
         }
 
-        public User FindUser(int UserId)
+        public UserModel FindUser(int UserId)
         {
             return UserCollection[UserId];
         }
@@ -59,13 +59,14 @@ namespace _1.e_Projekt.Services
             UserCollection.RemoveAt(UserId);
         } 
         //???
-        public void CreateUser(User user)
+        public void CreateUser(UserModel user)
         {
             if(user.UserId >= 0 && user.UserId < _counter)
             {
                 user.UserId = UniqueID;
                 UserCollection.Add(user);
             }
+
            //if(!UserCollection.Keys.ToList().Contains(user.UserId))
            // {
            //     RndiD.Equals(UserCollection[user.UserId]);
@@ -73,28 +74,31 @@ namespace _1.e_Projekt.Services
            //     UserCollection.Add(RndiD.Next(), user);
            // }
         }
-        public void UpdateUserInfo(User user)
+        public void UpdateUserInfo(UserModel user)
         {
             foreach (var ids in UserCollection)
             {
-                if (ids.UserId.Equals(user.UserId))
-                {
-                  // the user shouldnt be able to change their own id
-                    ids.FirstName = user.FirstName;
-                    ids.LastName = user.LastName;
-                    ids.Email = user.Email;
-                    ids.Password = user.Password;
-                    ids.UserIcon = user.UserIcon;
-                   if(!ids.UserId.Equals(user.UserId))
-                    {
-                        throw new Exception("error");
-                    }
+                //if (ids.UserId.Equals(user.UserId))
+                //{
+                //    // the user shouldnt be able to change their own id
+                //    ids.FirstName = user.FirstName;
+                //    ids.LastName = user.LastName;
+                //    ids.Email = user.Email;
+                //    ids.Password = user.Password;
+                //    ids.UserIcon = user.UserIcon;
+                //    if (!ids.UserId.Equals(user.UserId))
+                //    {
+                //        throw new Exception("error");
+                //    }
+                    UserCollection[user.UserId] = user;
                 }
             }
-            
+
         }
+    }
+     
 
        
-    }
-    }
+    
+   
 

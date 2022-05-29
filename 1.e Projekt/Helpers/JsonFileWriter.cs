@@ -60,7 +60,7 @@ namespace _1.e_Projekt.Helpers
 
         }
 
-        public static void WriteToJson3(List<User> UserCollection, string filename)
+        public static void WriteToJson3(List<UserModel> UserCollection, string filename)
         {
             var encoderSettings = new TextEncoderSettings();
             encoderSettings.AllowRange(UnicodeRanges.All);

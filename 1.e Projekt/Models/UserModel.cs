@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace _1.e_Projekt.Models
 {
-    public class User
+    public class UserModel
     {
   
         [Required(ErrorMessage = "you must enter something, literally anything")]
