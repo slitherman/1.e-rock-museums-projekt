@@ -4,26 +4,26 @@
 
     "PresentationnId": 1,
     "PresentationName": " Oplæg Om Rockens Opstart",
-    "ImageName": "Pictures/Rock.jpg"
+    "ImageName": "Rock.jpg"
 
   },
   "2": {
 
     "PresentationnId": 2,
     "PresentationName": " Oplæg Om Musik Før 2.Verdenskrig",
-    "ImageName": "Pictures/Jazz.jpg"
+    "ImageName": "Jazz.jpg"
 
   },
   "3": {
 
     "PresentationnId": 3,
     "PresentationName": "Oplæg Om Protestmusikken i 60'erne",
-    "ImageName": "Pictures/Protest.jpg"
+    "ImageName": "/Protest.jpg"
 
   },
   "4": {
     "PresentationnId": 4,
     "PresentationName": "Oplæg Om Stoffers Indflydelse På Musik ",
-    "ImageName": "Pictures/Woodstock.jpg"
+    "ImageName": "Woodstock.jpg"
   }
 }

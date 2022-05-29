@@ -4,7 +4,7 @@
     "ExhibitionName": "Rockens Opstart ",
     "PresentationName": null,
     "PresentationId": 0,
-    "ImageName": "Pictures/Rock.jpg",
+    "ImageName": "Rock.jpg",
     "AudioFile": null
   },
   "2": {
@@ -12,7 +12,7 @@
     "ExhibitionName": "Musik Før 2.Verdenskrig",
     "PresentationName": null,
     "PresentationId": 0,
-    "ImageName": "Pictures/Jazz.jpg",
+    "ImageName": "Jazz.jpg",
     "AudioFile": null
   },
   "3": {
@@ -20,7 +20,7 @@
     "ExhibitionName": "Protestmusikken i 60\u0027erne",
     "PresentationName": null,
     "PresentationId": 0,
-    "ImageName": "Pictures/Protest.jpg",
+    "ImageName": "Protest.jpg",
     "AudioFile": null
   },
   "4": {
@@ -28,7 +28,7 @@
     "ExhibitionName": "Stoffernes Indflydelse På Musik",
     "PresentationName": null,
     "PresentationId": 0,
-    "ImageName": "Pictures/Woodstock.jpg",
+    "ImageName": "Woodstock.jpg",
     "AudioFile": null
   }
 }
