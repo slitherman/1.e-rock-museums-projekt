@@ -10,7 +10,7 @@ namespace _1.e_Projekt.Models
 {
     public class User
     {
-        public static string Salt = "ligmaballs";
+  
         [Required(ErrorMessage = "you must enter something, literally anything")]
         [DisplayName("First Name")]
         [StringLength(40, MinimumLength = 4)]
@@ -37,29 +37,10 @@ namespace _1.e_Projekt.Models
         public string ConfirmPassword { get; set; }
         [DataType(DataType.ImageUrl)]
         public string UserIcon { get; set; }
-
         [Key]
         [DataType(DataType.Custom)]
-        [Required(ErrorMessage = "you must enter something, literally anything")]
-        private int _userId;
-        private byte[] _userIdHash;
-        public int UserId { 
-            get { return _userId; }
-            set {
-                _userId = value;
-                using (SHA256 sha256Hash = SHA256.Create())
-                {
-                    _userIdHash = sha256Hash.ComputeHash(System.Text.Encoding.UTF8.GetBytes(String.Format("{}{}", Salt, _userId)));
-                }
-            }
+        public int UserId { get; set; }
 
-        public string UserIdHash
-        {
-            get
-            {
-
-            }
-        }
 
         //given user role. Not every user should have administrative permissions 
 

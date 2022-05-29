@@ -12,11 +12,11 @@ namespace _1.e_Projekt.Models
 
         [Key]
         [Required(ErrorMessage = "ExhibitionId is required")]
-        [DisplayName("ExhibitionId")]
+        [DisplayName("Exhibition id")]
 
         public int ExhibitionId { get; set; }
-        [Required(ErrorMessage = "Exhibition Name is required")]
-        [DisplayName("Exhibition´Name")]
+   
+        [DisplayName("Exhibition name")]
         [StringLength(60, MinimumLength = 3)]
     
         public string ExhibitionName { get; set; }
@@ -26,13 +26,14 @@ namespace _1.e_Projekt.Models
         public string PresentationName { get; set; }
         [Key]
         [Required(ErrorMessage = "Presentation Id is required")]
-        [DisplayName("Presentation Id")]
+        [DisplayName("Presentation id")]
         public int PresentationId { get; set; }
 
-        [DisplayName("Image Name")]
+        [DisplayName("Image name")]
         public string ImageName { get; set; }
+        public string AudioFile { get; set; }
 
 
-      
+
     }
 }

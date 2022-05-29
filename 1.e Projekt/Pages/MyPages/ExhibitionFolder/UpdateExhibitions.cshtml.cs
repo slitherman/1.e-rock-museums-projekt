@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace _1.e_Projekt.Pages.MyPages
 {
-    [Authorize]
+    //[Authorize]
     public class UpdateExhibitionsModel : PageModel
     {
         public IExhibitionRepo Exhibition;
@@ -30,9 +30,9 @@ namespace _1.e_Projekt.Pages.MyPages
         }
 
     
-        public IActionResult OnPost(Exhibition ex)
+        public IActionResult OnPost()
         {
-            Exhibition.UpdateExhibition(ex);
+           Exhibition.UpdateExhibition(UpdatedExhibition);
             return RedirectToPage("GetExhibitions");
         }
     }

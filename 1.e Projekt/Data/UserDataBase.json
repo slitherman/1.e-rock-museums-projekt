@@ -4,9 +4,9 @@
     "LastName": "Shannon",
     "Email": "lachyshannon@gmail.com",
     "Password": "12345",
-    "UserIcon": "UserIcon.png",
+    "UserIcon": "Pictures/UserIcon.png",
     "Role": "Admin",
-    "UserId": "RndiD.Next()"
+    "UserId": "UniqueID"
 
 
   },
@@ -15,9 +15,9 @@
     "LastName": "Mccartney",
     "Email": "brandonmccartney@gmail.com",
     "Password": "44443",
-    "UserIcon": "UserIcon.png",
+    "UserIcon": "Pictures/UserIcon.png",
     "Role": "Admin",
-    "UserId": 2
+    "UserId": "UniqueID"
 
 
   },
@@ -26,9 +26,9 @@
     "LastName": "David",
     "Email": "larrydavid@gmail.com",
     "Password": "11111",
-    "UserIcon": "UserIcon.png",
+    "UserIcon": "Pictures/UserIcon.png",
     "Role": "User",
-    "UserId": 3
+    "UserId": "UniqueID"
 
 
   },
@@ -37,9 +37,9 @@
     "LastName": "Sar",
     "Email": "PolPot@gmail.com",
     "Password": "22222",
-    "UserIcon": "UserIcon.png",
+    "UserIcon": "Pictures/UserIcon.png",
     "Role": "User",
-    "UserId": 4
+    "UserId": "UniqueID"
 
 
   }

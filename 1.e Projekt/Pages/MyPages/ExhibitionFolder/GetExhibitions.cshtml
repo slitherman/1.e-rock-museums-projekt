@@ -6,38 +6,29 @@
 <h1>  List Of Exhibitions  </h1>
 
 
-    @foreach (var item in Model.ExhibitionCollection)
-    {
-  
-        <div class="container">
-            <div class="row">
-                <div class="col-sm">
-                    @item.Value.ExhibitionId
-                    @item.Value.ExhibitionName
-                    @item.Value.ImageName
-                    <a asp-page="DeleteExhibitions" asp-route-id="@item.Key">remove</a>
-                </div>
-                <div class="col-sm">
-                    @item.Value.ExhibitionId
-                    @item.Value.ExhibitionName
-                    @item.Value.ImageName
-                    <a asp-page="DeleteExhibitions" asp-route-id="@item.Key">remove</a>
-                </div>
-                <div class="col-sm">
-                    @item.Value.ExhibitionId
-                    @item.Value.ExhibitionName
-                    @item.Value.ImageName
-                    <a asp-page="DeleteExhibitions" asp-route-id="@item.Key">remove</a>
-                </div>
+@foreach (var item in Model.ExhibitionCollection)
+{
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                @item.Value.ExhibitionId
+                @item.Value.ExhibitionName
+                @item.Value.ImageName
+                <a asp-page="DeleteExhibitions" asp-route-id="@item.Key">remove</a>
+                <a asp-page="UpdateExhibitions" asp-route-id="@item.Key">update</a>
+
             </div>
+
         </div>
+    </div>
+
+   
+
+
+}
 
 
 
-
-    }
-
-
-</div>
 
 

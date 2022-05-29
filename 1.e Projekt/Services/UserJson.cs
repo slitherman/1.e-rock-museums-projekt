@@ -10,27 +10,36 @@ namespace _1.e_Projekt.Services
 {
     public class UserJson: IUserInterface
     {
-        Random RndiD = new Random();
+        public int _counter = 0;
+        
+        public int UniqueId
+        {
+            get
+            {
+               return _counter++;
+            }
+        }
+
         readonly string filename = "/Data/UserDatabase.json/";
 
-        public void  SaveJson (Dictionary<int, User> UserCollection)
+        public void  SaveJson (List<User> UserCollection)
         {
             JsonFileWriter.WriteToJson3(UserCollection, filename);
 
         }
-        public Dictionary<int, User> ReadJson()
+        public List<User> ReadJson()
         {
             return JsonFileReader.ReadJson3(filename);
         }
 
-        public Dictionary<int, User> GetAllUsers()
+        public List<User> GetAllUsers()
         {
             return ReadJson();
         }
 
         public User FindUser(int UserId)
         {
-            Dictionary<int, User> UserCollection = GetAllUsers();
+            List<User> UserCollection = GetAllUsers();
             User FoundUsers = UserCollection[UserId];
             return FoundUsers;
         
@@ -38,24 +47,25 @@ namespace _1.e_Projekt.Services
 
         public void DeleteUser(int UserId)
         {
-            Dictionary<int, User> UserCollection = GetAllUsers();
-            UserCollection.Remove(UserId);
+            List<User> UserCollection = GetAllUsers();
+            UserCollection.RemoveAt(UserId);
             JsonFileWriter.WriteToJson3(UserCollection, filename);
 
         }
 
         public void CreateUser(User user)
         {
-            Dictionary<int, User> UserCollection = GetAllUsers();
+            List<User> UserCollection = GetAllUsers();
   
             {
-                if(!UserCollection.Keys.Contains(user.UserId))
+                if(user.UserId >= 0 && user.UserId < _counter)
               
                 {
-                    
-                    RndiD.Equals(UserCollection[user.UserId]);
-                    RndiD.Equals(user.UserId);
-                    UserCollection.Add(RndiD.Next(), user);
+
+                    user.UserId = UniqueId;
+
+                    UserCollection.Add(user);
+
                     JsonFileWriter.WriteToJson3(UserCollection, filename);
                 }
             }
@@ -63,8 +73,8 @@ namespace _1.e_Projekt.Services
 
         public void UpdateUserInfo(User user)
         {
-            Dictionary<int, User> UserCollection = GetAllUsers();
-            foreach (var ids in UserCollection.Values) 
+            List<User> UserCollection = GetAllUsers();
+            foreach (var ids in UserCollection) 
             {
                 if(ids.UserId.Equals(user.UserId))
                 {

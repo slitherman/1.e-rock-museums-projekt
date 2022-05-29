@@ -1,86 +1,34 @@
 {
   "1": {
     "ExhibitionId": 1,
-    "ExhibitionName": "Rockens opstart",
+    "ExhibitionName": "Rockens Opstart ddfsdf",
     "PresentationName": null,
     "PresentationId": 0,
-    "ImageName": "Rock"
+    "ImageName": "Pictures/Rock.jpg",
+    "AudioFile": null
   },
   "2": {
     "ExhibitionId": 2,
-    "ExhibitionName": "Musik f�r 2.Verdenskrig",
+    "ExhibitionName": "Musik F�r 2.Verdenskrig",
     "PresentationName": null,
     "PresentationId": 0,
-    "ImageName": "Jazz"
+    "ImageName": "Pictures/Jazz.jpg",
+    "AudioFile": null
   },
   "3": {
     "ExhibitionId": 3,
-    "ExhibitionName": "Protestmusikken i 60'erne",
+    "ExhibitionName": "Protestmusikken i 60\u0027erne",
     "PresentationName": null,
     "PresentationId": 0,
-    "ImageName": "Protest"
+    "ImageName": "Pictures/Protest.jpg",
+    "AudioFile": null
   },
   "4": {
-    "ExhibitionId": 3,
-    "ExhibitionName": "Stoffers indflydelse p� musik ",
+    "ExhibitionId": 4,
+    "ExhibitionName": "Indflydelse P� Musik",
     "PresentationName": null,
     "PresentationId": 0,
-    "ImageName": "."
-  },
-  "3242": {
-    "ExhibitionId": 3242,
-    "ExhibitionName": "sadadaad",
-    "PresentationName": null,
-    "PresentationId": 0,
-    "ImageName": "sdadaadda"
-  },
-  "87": {
-    "ExhibitionId": 87,
-    "ExhibitionName": "8787",
-    "PresentationName": null,
-    "PresentationId": 0,
-    "ImageName": "8787"
-  },
-  "465665": {
-    "ExhibitionId": 465665,
-    "ExhibitionName": "655665",
-    "PresentationName": null,
-    "PresentationId": 0,
-    "ImageName": "6565"
-  },
-  "432289": {
-    "ExhibitionId": 432289,
-    "ExhibitionName": "fdsfdsfdsfsd",
-    "PresentationName": null,
-    "PresentationId": 0,
-    "ImageName": "5"
-  },
-  "90": {
-    "ExhibitionId": 90,
-    "ExhibitionName": "haha",
-    "PresentationName": null,
-    "PresentationId": 0,
-    "ImageName": "d"
-  },
-  "11": {
-    "ExhibitionId": 11,
-    "ExhibitionName": "655665",
-    "PresentationName": null,
-    "PresentationId": 0,
-    "ImageName": "dasdas"
-  },
-  "0": {
-    "ExhibitionId": 0,
-    "ExhibitionName": "sdaaasd",
-    "PresentationName": null,
-    "PresentationId": 0,
-    "ImageName": "dsad"
-  },
-  "8778565": {
-    "ExhibitionId": 8778565,
-    "ExhibitionName": "haha2",
-    "PresentationName": null,
-    "PresentationId": 0,
-    "ImageName": "7"
+    "ImageName": "Pictures/Woodstock.jpg",
+    "AudioFile": null
   }
 }

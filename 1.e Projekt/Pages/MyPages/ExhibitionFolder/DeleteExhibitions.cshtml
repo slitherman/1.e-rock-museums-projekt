@@ -3,23 +3,24 @@
 @{
 }
 <h1>  Delete Exhibition  </h1>
-<form action="/" method="post">
+<form method="post">
 
-    <dl>
-        <dt>@Html.DisplayNameFor(model => model.DeletedExhibition.ExhibitionId)</dt>
-        <dd>
+    <dl class="row">
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.DeletedExhibition.ExhibitionId)</dt>
+        <dd class="col-sm-2">
             @Html.DisplayFor(model => model.DeletedExhibition.ExhibitionId)
         </dd>
     </dl>
-    <dl>
-        <dt>@Html.DisplayNameFor(model => model.DeletedExhibition.ExhibitionName)</dt>
+    <dl class="col-sm-2">
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.DeletedExhibition.ExhibitionName)</dt>
         <dd>
             @Html.DisplayFor(model => model.DeletedExhibition.ExhibitionName)
         </dd>
-    </dl>
-    <dl>
-        <dt>@Html.DisplayNameFor(model => model.DeletedExhibition.ImageName)</dt>
-        <dd>
+    </dl >
+    <dl class="col-sm-2">
+        @Html.DisplayNameFor(model => model.DeletedExhibition.ImageName)
+        <dd  class="col-sm-2" >
             @Html.DisplayFor(model => model.DeletedExhibition.ImageName)
         </dd>
     </dl>

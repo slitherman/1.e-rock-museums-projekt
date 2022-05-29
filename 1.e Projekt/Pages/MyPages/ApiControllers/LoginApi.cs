@@ -75,15 +75,15 @@ namespace _1.e_Projekt.Pages.MyPages.AoiControllers
         private User Authenticater(User userLogin)
         {
 
-            var CurrentUser = CurrentUsers.UserCollection.FirstOrDefault(o => o.Value.Email.ToLower() ==
-             userLogin.Email.ToLower() && o.Value.Password == userLogin.Password);
+            var CurrentUser = CurrentUsers.UserCollection.FirstOrDefault(o => o.Email.ToLower() ==
+             userLogin.Email.ToLower() && o.Password == userLogin.Password);
             // cant use != so i had to settle with this
             // hopefully it works
             //knowing me it wont
 
             if (!CurrentUser.Equals(null))
             {
-                return CurrentUser.Value;
+                return CurrentUser;
             }
             return null;
 

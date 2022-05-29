@@ -63,22 +63,21 @@ namespace _1.e_Projekt.Services
         public void UpdateExhibition(Exhibition ex)
         {
             Dictionary<int, Exhibition> Exhibitions = GetExhibitions();
-        
-            foreach (var id in Exhibitions.Values)
-            {
-                if(id.ExhibitionId.Equals(ex.ExhibitionId))
-                {
-                    id.ExhibitionId = ex.ExhibitionId;
-                    id.ExhibitionName = ex.ExhibitionName;
-                    id.ImageName = ex.ImageName;
-                    JsonFileWriter.WriteToJson(Exhibitions, filename);
-                }
-                if(!id.ExhibitionId.Equals(ex.ExhibitionId))
-                {
-                    throw new Exception("error");
-                }
-            }
 
+            //foreach (var id in Exhibitions.Values)
+            //{
+
+            //  {
+            //    id.ExhibitionId = ex.ExhibitionId;
+            //    id.ExhibitionName = ex.ExhibitionName;
+            //    id.ImageName = ex.ImageName;
+            //     JsonFileWriter.WriteToJson(Exhibitions, filename);
+            //  }
+
+            //}
+
+            Exhibitions[ex.ExhibitionId] = ex;
+            JsonFileWriter.WriteToJson(Exhibitions, filename);
 
         }
         public void AddPresentation(Exhibition pre)
@@ -119,20 +118,24 @@ namespace _1.e_Projekt.Services
         public void UpdatePresentation(Exhibition pre)
         {
             Dictionary<int, Exhibition> Presentations = GetPreentations();
-            foreach (var id in Presentations.Values)
-            {
-                if (id.PresentationId.Equals(pre.ExhibitionId))
-                {
-                    id.PresentationId = pre.ExhibitionId;
-                    id.PresentationName = pre.PresentationName;
-                    id.ImageName = pre.ImageName;
-                    JsonFileWriter.WriteToJson2(Presentations, filename);
-                }
-                if (!id.PresentationId.Equals(pre.ExhibitionId))
-                {
-                    throw new Exception("error");
-                }
-            }
+            //foreach (var id in Presentations.Values)
+            //{
+
+            //  {
+            //       id.PresentationId = pre.ExhibitionId;
+            //        id.PresentationName = pre.PresentationName;
+            //     id.ImageName = pre.ImageName;
+            //        JsonFileWriter.WriteToJson2(Presentations, filename);
+            // }
+
+            //}
+
+
+
+            //Presentations[pre.PresentationId] = pre;
+            JsonFileWriter.WriteToJson2(Presentations, filename);
+
+
         }
     }
 

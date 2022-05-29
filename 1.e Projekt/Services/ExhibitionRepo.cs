@@ -25,15 +25,15 @@ namespace _1.e_Projekt.Services
             //Giver op. Dette er den letteste måde at kunne få de 2 collections til at kommunikere med hinanden + dependency injection er også blevet muligt.
                 Exhibitions = new Dictionary<int, Exhibition>();
                 Exhibitions.Add(1, new Exhibition() { ExhibitionId = 1, ExhibitionName = "Rockens opstart", ImageName="Rock.jpg" });
-                Exhibitions.Add(2, new Exhibition() { ExhibitionId = 2, ExhibitionName = "Musik før 2.Verdenskrig", ImageName="Jazz.jpg"});
-                Exhibitions.Add(3, new Exhibition() { ExhibitionId = 3, ExhibitionName = "Protestmusikken i 60'erne", ImageName="Protest.jpg" });
-                Exhibitions.Add(4, new Exhibition() { ExhibitionId = 4, ExhibitionName = "Stoffers indflydelse på musik" , ImageName="Woodstock.jpg"});
+                Exhibitions.Add(2, new Exhibition() { ExhibitionId = 2, ExhibitionName = "Musik før 2.Verdenskrig", ImageName="Jazz.jpg",  });
+                Exhibitions.Add(3, new Exhibition() { ExhibitionId = 3, ExhibitionName = "Protestmusikken i 60'erne", ImageName="Protest.jpg",  });
+                Exhibitions.Add(4, new Exhibition() { ExhibitionId = 4, ExhibitionName = "Stoffers indflydelse på musik" , ImageName="Woodstock.jpg", });
             //Har fjernet presentation klassen, alle presentations er nu exhibitions
             Presentations = new Dictionary<int, Exhibition>();
-                Presentations.Add(1, new Exhibition() { PresentationId = 1, PresentationName = " Oplæg Om Rockens Opstart", ImageName = "Rock.jpg" });
-                Presentations.Add(2, new Exhibition() { PresentationId = 1, PresentationName = " Oplæg Om Musik Før 2.Verdenskrig", ImageName = "Jazz.jpg" });
-                Presentations.Add(3, new Exhibition() { PresentationId = 1, PresentationName = " Oplæg Om Protestmusikken i 60'erne", ImageName = "Protest.jpg" });
-                Presentations.Add(4, new Exhibition() { PresentationId = 1, PresentationName = " Oplæg Om Stoffers Indflydelse På Musik", ImageName = "Woodstock.jpg" });
+                Presentations.Add(1, new Exhibition() { PresentationId = 1, PresentationName = " Oplæg Om Rockens Opstart", ImageName = "Pictures/Rock.jpg", AudioFile = "Audiofiles/09 genome.mp3" });
+                Presentations.Add(2, new Exhibition() { PresentationId = 1, PresentationName = " Oplæg Om Musik Før 2.Verdenskrig", ImageName = "Pictures/Jazz.jpg", AudioFile = "Audiofiles/11 tsurugi no mai.mp3" });
+                Presentations.Add(3, new Exhibition() { PresentationId = 1, PresentationName = " Oplæg Om Protestmusikken i 60'erne", ImageName = "Pictures/Protest.jpg", AudioFile = "Audiofiles/13 chambers.mp3" });
+                Presentations.Add(4, new Exhibition() { PresentationId = 1, PresentationName = " Oplæg Om Stoffers Indflydelse På Musik", ImageName = "Pictures/Woodstock.jpg", AudioFile = "Audiofiles/15 how you feel.mp3" });
             foreach (var ids in Presentations.Values)
             {
                 if(ids.PresentationId.Equals(ids.ExhibitionId))
@@ -83,19 +83,18 @@ namespace _1.e_Projekt.Services
       
         public void UpdateExhibition (Exhibition ex)
         {
-            foreach (var id in Exhibitions.Values)
-            {
-                if(id.ExhibitionId.Equals(ex.ExhibitionId))
-                {
-                    id.ExhibitionId = ex.ExhibitionId;
-                    id.ExhibitionName = ex.ExhibitionName;
-                    id.ImageName = ex.ImageName;
-                }
-                if (!id.ExhibitionId.Equals(ex.ExhibitionId))
-                {
-                    throw new Exception("error");
-                }
-            }
+            //foreach (var id in Exhibitions.Values)
+            //{
+
+            //    {
+            //       id.ExhibitionId = ex.ExhibitionId;
+            //       id.ExhibitionName = ex.ExhibitionName;
+            //       id.ImageName = ex.ImageName;
+              
+            //    }
+
+            //}
+            Exhibitions[ex.ExhibitionId] = ex;
         }
 
 
@@ -110,21 +109,13 @@ namespace _1.e_Projekt.Services
       
         public void UpdatePresentation(Exhibition pre)
         {
-            foreach (var id in Presentations.Values)
-            {
-                if (id.PresentationId.Equals(pre.ExhibitionId))
-                {
-                    id.PresentationId = pre.ExhibitionId;
-                    id.PresentationName = pre.PresentationName;
-                    id.ImageName = pre.ImageName;
-
-                }
-                if(!id.PresentationId.Equals(pre.ExhibitionId))
-                {
-                    throw new Exception("error");
-                }
-
-            }
+            //foreach (var id in Presentations.Values)
+            //{
+            //    id.PresentationId = pre.PresentationId;
+            //    id.PresentationName = pre.PresentationName;
+            //    id.ImageName = pre.ImageName;
+            //}
+            Presentations[pre.PresentationId] = pre;
         }
 
 
@@ -143,6 +134,7 @@ namespace _1.e_Projekt.Services
         }
 
     }
+
 
     
 }
