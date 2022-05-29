@@ -1,7 +1,7 @@
 {
   "1": {
     "ExhibitionId": 1,
-    "ExhibitionName": "Rockens Opstart ddfsdf",
+    "ExhibitionName": "Rockens Opstart ",
     "PresentationName": null,
     "PresentationId": 0,
     "ImageName": "Pictures/Rock.jpg",
@@ -9,7 +9,7 @@
   },
   "2": {
     "ExhibitionId": 2,
-    "ExhibitionName": "Musik F�r 2.Verdenskrig",
+    "ExhibitionName": "Musik Før 2.Verdenskrig",
     "PresentationName": null,
     "PresentationId": 0,
     "ImageName": "Pictures/Jazz.jpg",
@@ -25,7 +25,7 @@
   },
   "4": {
     "ExhibitionId": 4,
-    "ExhibitionName": "Indflydelse P� Musik",
+    "ExhibitionName": "Stoffernes Indflydelse På Musik",
     "PresentationName": null,
     "PresentationId": 0,
     "ImageName": "Pictures/Woodstock.jpg",

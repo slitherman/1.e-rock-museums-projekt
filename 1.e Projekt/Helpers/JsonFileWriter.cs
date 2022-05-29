@@ -19,6 +19,7 @@ namespace _1.e_Projekt.Helpers
           
             var encoderSettings = new TextEncoderSettings();
             encoderSettings.AllowRange(UnicodeRanges.All);
+            encoderSettings.AllowCharacters('\u0305', '\u0330', '\u0306');
 
             var Options = new JsonSerializerOptions
             {
