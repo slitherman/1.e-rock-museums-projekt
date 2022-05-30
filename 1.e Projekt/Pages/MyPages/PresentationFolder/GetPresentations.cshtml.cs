@@ -15,16 +15,18 @@ namespace _1.e_Projekt.Pages.MyPages.PresentationFolder
     public class GetPresentationsModel : PageModel
     {
         public IExhibitionRepo PresentationMethods;
-        [BindProperty(SupportsGet =true)]
-       public  Dictionary<int, Exhibition> Presentations { get; set; }
+
         public GetPresentationsModel(IExhibitionRepo repo)
         {
             PresentationMethods = repo;
 
         }
+
+        [BindProperty(SupportsGet = true)]
+        public Dictionary<int, Exhibition> PresentationCollection { get; set; }
         public IActionResult OnGet()
         {
-            Presentations = PresentationMethods.GetPreentations();
+            PresentationCollection = PresentationMethods.GetPreentations();
             return Page();
 
         }

@@ -14,17 +14,17 @@ using Newtonsoft.Json.Linq;
 
 namespace _1.e_Projekt.Pages.MyPages.UserFolder
 {
-    [Authorize]
+    [AllowAnonymous]
     public class AddUserModel : PageModel
     {
         private UserManager<IdentityUser> userManager;
-        private UserManager<IdentityUser> signInManeger;
+        private SignInManager<IdentityUser> signInManeger;
 
         public IUserInterface UserMethods;
         [BindProperty]
         [PageRemote(PageHandler = "IsEmailTaken", HttpMethod ="Get", ErrorMessage ="error email is already in use")]
         public UserModel AddedUsers { get; set; }
-        public AddUserModel(IUserInterface repo, UserManager<IdentityUser> userManager, UserManager<IdentityUser> signInManeger)
+        public AddUserModel(IUserInterface repo, UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManeger)
         {
             UserMethods = repo;
             this.userManager = userManager;
@@ -35,25 +35,40 @@ namespace _1.e_Projekt.Pages.MyPages.UserFolder
         {
             return Page();
         }
-        public IActionResult OnPost()
+        public  async Task<IActionResult> OnPost()
         {
             if (ModelState.IsValid)
             {
-                var user = new UserModel()
+                var user = new IdentityUser()
                 {
-                    FirstName= AddedUsers.FirstName,
-                    LastName = AddedUsers.LastName,
+                    UserName = AddedUsers.Email,
+                    Email = AddedUsers.Email,
+                    
 
-                     Email = AddedUsers.Email,
-                     Password= AddedUsers.Password,
-                    ConfirmPassword= AddedUsers.ConfirmPassword
+                    
+                    
                   
 
                 };
 
-             UserMethods.CreateUser(AddedUsers);
-              return RedirectToPage("GetUsers");
+                var result = await userManager.CreateAsync(user, AddedUsers.Password);
+                if (result.Succeeded)
+                {
+                    // might change this to ispersistent later
+                    await signInManeger.SignInAsync(user, false);
+                }
+
+                foreach (var item in result.Errors)
+                {
+                    ModelState.AddModelError("", item.Description);
+
+                }
+                return RedirectToPage("GetUsers");
+
+
             }
+
+
             return Page();
         }
         public JsonResult IsEmailTaken(UserModel Users)

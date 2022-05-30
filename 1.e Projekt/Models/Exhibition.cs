@@ -13,7 +13,6 @@ namespace _1.e_Projekt.Models
         [Key]
         [Required(ErrorMessage = "ExhibitionId is required")]
         [DisplayName("Exhibition id")]
-
         public int ExhibitionId { get; set; }
    
         [DisplayName("Exhibition name")]
@@ -30,7 +29,9 @@ namespace _1.e_Projekt.Models
         public int PresentationId { get; set; }
 
         [DisplayName("Image name")]
+
         public string ImageName { get; set; }
+
         public string AudioFile { get; set; }
 
 

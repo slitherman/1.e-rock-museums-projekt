@@ -17,6 +17,13 @@
                 @item.Value.ImageName
                 <a asp-page="DeleteExhibitions" asp-route-id="@item.Key">remove</a>
                 <a asp-page="UpdateExhibitions" asp-route-id="@item.Key">update</a>
+                <a asp-page="" asp-route-id="@item.Key">update</a>
+                <audio controls>
+                    <source src="@item.Value.AudioFile" type="@item.Value.AudioFile" />
+                    <source src="@item.Value.AudioFile" type="@item.Value.AudioFile">
+                    Your browser does not support the audio tag.
+                </audio>
+
 
             </div>
 

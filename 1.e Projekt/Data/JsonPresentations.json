@@ -4,26 +4,29 @@
 
     "PresentationnId": 1,
     "PresentationName": " Oplæg Om Rockens Opstart",
-    "ImageName": "Rock.jpg"
-
+    "ImageName": "Rock.jpg",
+    "AudioFile": "09 genome.mp3"
   },
   "2": {
 
     "PresentationnId": 2,
     "PresentationName": " Oplæg Om Musik Før 2.Verdenskrig",
-    "ImageName": "Jazz.jpg"
+    "ImageName": "Jazz.jpg",
+    "AudioFile": "11 tsurugi no mai.mp3"
 
   },
   "3": {
 
     "PresentationnId": 3,
     "PresentationName": "Oplæg Om Protestmusikken i 60'erne",
-    "ImageName": "/Protest.jpg"
+    "ImageName": "Protest.jpg",
+    "AudioFile": "13 chambers.mp3"
 
   },
   "4": {
     "PresentationnId": 4,
     "PresentationName": "Oplæg Om Stoffers Indflydelse På Musik ",
-    "ImageName": "Woodstock.jpg"
+    "ImageName": "Woodstock.jpg",
+    "AudioFile": "15 how you feel.mp3"
   }
 }

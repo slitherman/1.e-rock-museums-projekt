@@ -14,7 +14,7 @@ namespace _1.e_Projekt.Helpers
 {
     static public class JsonFileReader
     {
-        public static Dictionary<int, Exhibition> ReadJson(string filename, Dictionary<int, Exhibition> ex)
+        public static Dictionary<int, Exhibition> ReadJson(string filename)
         {
             var encoderSettings = new TextEncoderSettings();
             encoderSettings.AllowRange(UnicodeRanges.All);
@@ -28,10 +28,10 @@ namespace _1.e_Projekt.Helpers
             };
 
             string jsonstring = File.ReadAllText(filename);
-          return  ex = JsonSerializer.Deserialize<Dictionary<int, Exhibition>>(jsonstring, Options);
+          return  JsonSerializer.Deserialize<Dictionary<int, Exhibition>>(jsonstring, Options);
           }
 
-        public static Dictionary<int, Exhibition> ReadJson2(string filename, Dictionary<int, Exhibition> pre)
+        public static Dictionary<int, Exhibition> ReadJson2(string filename)
         {
             var encoderSettings = new TextEncoderSettings();
             encoderSettings.AllowRange(UnicodeRanges.All);
@@ -47,10 +47,10 @@ namespace _1.e_Projekt.Helpers
             //string jsonstring = File.ReadAllText(filename);
             //return JsonConvert.DeserializeObject<Dictionary<int, Exhibition>>(jsonstring);
             string jsonstring = File.ReadAllText(filename);
-            return pre = JsonSerializer.Deserialize<Dictionary<int, Exhibition>>(jsonstring, Options);
+            return JsonSerializer.Deserialize<Dictionary<int, Exhibition>>(jsonstring, Options);
         }
 
-        public static List<UserModel> ReadJson3(string filename, List<UserModel> Users)
+        public static List<UserModel> ReadJson3(string filename)
         {
             //string jsonstring = File.ReadAllText(filename);
             //return JsonConvert.DeserializeObject< List < UserModel>> (jsonstring);
@@ -66,7 +66,7 @@ namespace _1.e_Projekt.Helpers
                 WriteIndented = true
             };
 
-            return Users = JsonSerializer.Deserialize<List < UserModel >> (jsonstring, Options);
+            return JsonSerializer.Deserialize<List < UserModel >> (jsonstring, Options);
         }
 
     }
