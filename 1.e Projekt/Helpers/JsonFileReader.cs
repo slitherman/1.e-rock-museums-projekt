@@ -27,7 +27,7 @@ namespace _1.e_Projekt.Helpers
                 WriteIndented = true
             };
 
-            string jsonstring = File.ReadAllText(filename);
+           string jsonstring = File.ReadAllText(filename);
           return  JsonSerializer.Deserialize<Dictionary<int, Exhibition>>(jsonstring, Options);
           }
 
@@ -54,7 +54,7 @@ namespace _1.e_Projekt.Helpers
         {
             //string jsonstring = File.ReadAllText(filename);
             //return JsonConvert.DeserializeObject< List < UserModel>> (jsonstring);
-            string jsonstring = File.ReadAllText(filename);
+          
             var encoderSettings = new TextEncoderSettings();
             encoderSettings.AllowRange(UnicodeRanges.All);
             encoderSettings.AllowCharacters('\u0305', '\u0330', '\u0306');
@@ -65,8 +65,8 @@ namespace _1.e_Projekt.Helpers
 
                 WriteIndented = true
             };
-
-            return JsonSerializer.Deserialize<List < UserModel >> (jsonstring, Options);
+            string jsonstring = File.ReadAllText(filename);
+            return JsonSerializer.Deserialize<List<UserModel>>(jsonstring, Options);
         }
 
     }

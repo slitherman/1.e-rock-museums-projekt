@@ -18,7 +18,7 @@ using System.Text.Encodings.Web;
 using System.Text.Unicode;
 using System.Threading.Tasks;
 using System.Text.Json;
-
+using Microsoft.AspNetCore.Identity;
 
 namespace _1.e_Projekt
 {
@@ -39,6 +39,8 @@ namespace _1.e_Projekt
             services.AddTransient<IExhibitionRepo, JsonExhibition>();
             services.AddSingleton<IUserInterface, Users>();
             services.AddTransient<IUserInterface, UserJson>();
+    
+
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {
                 options.TokenValidationParameters = new TokenValidationParameters
@@ -57,8 +59,8 @@ namespace _1.e_Projekt
                 };
 
 
-            });     
-
+            });
+            services.AddRazorPages();
 
         }
 
@@ -80,6 +82,7 @@ namespace _1.e_Projekt
             app.UseStaticFiles();
 
             app.UseRouting();
+            //mapping the api controllers
             app.UseAuthentication();
             app.UseAuthorization();
 

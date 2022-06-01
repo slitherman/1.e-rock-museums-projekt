@@ -1,0 +1,49 @@
+﻿@page
+@model _1.e_Projekt.Pages.MyPages.UserFolder.UserSignUpModel
+@{
+}
+<div class="container mt-5" >
+    <div class=" row align-items-center justify-content-center">
+        <div class="col-sm-12 col-md-12 col-lg-4">
+            <div class="mb-3"> Sign up</div>
+            <form method="post">
+                <div asp-validation-summary="All" class="text-danger">  </div>
+
+
+                <div class="mb-3">
+                    <label class="form-label" asp-for="@Model.NewUser.FirstName">Firstname</label>
+                    <input type="text" asp-for="@Model.NewUser.FirstName" class="form-control" />
+                    <span asp-validation-for="@Model.NewUser.FirstName" class="text-danger">  </span>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" asp-for="@Model.NewUser.LastName ">Lastname</label>
+                    <input type="text" asp-for="@Model.NewUser.LastName" class="form-control" />
+                    <span asp-validation-for="@Model.NewUser.LastName" class="text-danger">  </span>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" asp-for="@Model.NewUser.Email">Email</label>
+                    <input type="email" asp-for="@Model.NewUser.Email" class="form-control" />
+                    <span asp-validation-for="@Model.NewUser.Email" class="text-danger">  </span>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" asp-for="@Model.NewUser.Password ">Password</label>
+                    <input type="password" asp-for="@Model.NewUser.Password" class="form-control" />
+                    <span asp-validation-for="@Model.NewUser.Password" class="text-danger">  </span>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" asp-for="@Model.NewUser.ConfirmPassword">ConfirmPassword</label>
+                    <input type="password" asp-for="@Model.NewUser.ConfirmPassword" class="form-control" />
+                    <span asp-validation-for="@Model.NewUser.ConfirmPassword" class="text-danger">  </span>
+                </div>
+
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary"> Sign up</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

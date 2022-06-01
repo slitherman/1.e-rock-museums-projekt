@@ -35,7 +35,7 @@ namespace _1.e_Projekt.Pages.MyPages.ApiControllers
                 return new UserModel
                 {
                     FirstName = userClaims.FirstOrDefault(o => o.Type == ClaimTypes.NameIdentifier)?.Value,
-                    LastName = userClaims.FirstOrDefault(o => o.Type == ClaimTypes.NameIdentifier)?.Value,
+                    LastName = userClaims.FirstOrDefault(o => o.Type == ClaimTypes.Surname)?.Value,
                     Email = userClaims.FirstOrDefault(o => o.Type == ClaimTypes.Email)?.Value,
                     Role= userClaims.FirstOrDefault(o => o.Type == ClaimTypes.Role)?.Value,
                 };

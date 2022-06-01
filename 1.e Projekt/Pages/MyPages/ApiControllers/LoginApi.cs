@@ -22,7 +22,7 @@ namespace _1.e_Projekt.Pages.MyPages.AoiControllers
     public class LoginApi : ControllerBase
     {
         private IConfiguration cfg;
-        public IUserInterface UserMethods;
+   
 
         public static Users CurrentUsers;
 
@@ -35,12 +35,12 @@ namespace _1.e_Projekt.Pages.MyPages.AoiControllers
 
         [AllowAnonymous]
         [HttpPost]
-        public IActionResult Login([FromBody] UserModel Users)
+        public IActionResult Login([FromBody] Models.UserLogin Users)
         {
             var user = Authenticater(Users);
             if(user !=null)
             {
-                var token = Generate(Users);
+                var token = Generate(user);
                 return Ok(token);
             }
             return NotFound("User Not Found");
@@ -56,7 +56,7 @@ namespace _1.e_Projekt.Pages.MyPages.AoiControllers
             { // all claimtypes are apparently strings, find out how to add userid and password later or something
                 
                 new Claim(ClaimTypes.NameIdentifier, users.FirstName),
-                new Claim(ClaimTypes.NameIdentifier, users.LastName),
+                new Claim(ClaimTypes.Surname, users.LastName),
                 new Claim(ClaimTypes.Email, users.Email),
                    new Claim(ClaimTypes.Role, users.Role),
 
@@ -67,21 +67,19 @@ namespace _1.e_Projekt.Pages.MyPages.AoiControllers
 
 
                claims,
-               expires: DateTime.Now.AddHours(1),
+               expires: DateTime.Now.AddHours(10),
                signingCredentials: credentials);
             return new JwtSecurityTokenHandler().WriteToken(token);   
         }
 
-        private UserModel Authenticater(UserModel userLogin)
+        private UserModel Authenticater(Models.UserLogin userLogin)
         {
 
             var CurrentUser = CurrentUsers.UserCollection.FirstOrDefault(o => o.Email.ToLower() ==
              userLogin.Email.ToLower() && o.Password == userLogin.Password);
-            // cant use != so i had to settle with this
-            // hopefully it works
-            //knowing me it wont
+         
 
-            if (!CurrentUser.Equals(null))
+            if (CurrentUser != null)
             {
                 return CurrentUser;
             }

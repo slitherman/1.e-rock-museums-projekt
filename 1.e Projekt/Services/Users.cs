@@ -16,7 +16,7 @@ namespace _1.e_Projekt.Services
      
 
       public List<UserModel> UserCollection { get; set; }
-      public Random RndiD = new Random();
+
         private int _counter = 0;
 
         public int UniqueID
@@ -41,10 +41,7 @@ namespace _1.e_Projekt.Services
         }
 
        
-        public void GetRandId()
-        {
-          
-        } 
+       
         public List<UserModel> GetAllUsers()
         {
             return UserCollection;
@@ -66,6 +63,8 @@ namespace _1.e_Projekt.Services
                 user.UserId = UniqueID;
                 UserCollection.Add(user);
             }
+          
+
 
            //if(!UserCollection.Keys.ToList().Contains(user.UserId))
            // {
@@ -74,6 +73,7 @@ namespace _1.e_Projekt.Services
            //     UserCollection.Add(RndiD.Next(), user);
            // }
         }
+      
         public void UpdateUserInfo(UserModel user)
         {
             foreach (var ids in UserCollection)
