@@ -24,9 +24,9 @@ namespace _1.e_Projekt.Pages.MyPages.PresentationFolder
         {
             PresentationMethods = repo;
         }
-        public IActionResult OnGet(int id)
+        public IActionResult OnGet()
         {
-            Presentation = PresentationMethods.ReadPresentation(id);
+ 
             return Page();
             
 

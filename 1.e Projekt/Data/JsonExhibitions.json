@@ -30,5 +30,13 @@
     "PresentationId": 0,
     "ImageName": "Woodstock.jpg",
     "AudioFile": null
+  },
+  "12343": {
+    "ExhibitionId": 12343,
+    "ExhibitionName": "sasad",
+    "PresentationName": null,
+    "PresentationId": 0,
+    "ImageName": "asdasd",
+    "AudioFile": null
   }
 }
