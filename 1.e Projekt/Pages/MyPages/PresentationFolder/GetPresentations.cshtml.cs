@@ -26,7 +26,7 @@ namespace _1.e_Projekt.Pages.MyPages.PresentationFolder
         public Dictionary<int, Exhibition> PresentationCollection { get; set; }
         public IActionResult OnGet()
         {
-            PresentationCollection = PresentationMethods.GetPreentations();
+            PresentationCollection = PresentationMethods.GetPresentations();
             return Page();
 
         }

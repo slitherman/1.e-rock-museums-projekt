@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace _1.e_Projekt.Pages.MyPages.PresentationFolder
 {
-    [Authorize]
+    //[Authorize]
     public class AddPresentationModel : PageModel
     {
 

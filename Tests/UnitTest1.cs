@@ -28,39 +28,14 @@ namespace Tests
 
 
         }
-        public Dictionary<int, Exhibition> ExhibitionsTest { get;  set; }
-
-        public UnitTest1()
-        {
-            ExhibitionsTest = new Dictionary<int, Exhibition>();
-            
-
-            ExhibitionsTest.Add(1, new Exhibition() { ExhibitionId = 1, ExhibitionName = "Rockens opstart", ImageName = "Rock.jpg" });
-            ExhibitionsTest.Add(2, new Exhibition() { ExhibitionId = 2, ExhibitionName = "Musik før 2.Verdenskrig", ImageName = "Jazz.jpg", });
-            ExhibitionsTest.Add(3, new Exhibition() { ExhibitionId = 3, ExhibitionName = "Protestmusikken i 60'erne", ImageName = "Protest.jpg", });
-            ExhibitionsTest.Add(4, new Exhibition() { ExhibitionId = 4, ExhibitionName = "Stoffers indflydelse på musik", ImageName = "Woodstock.jpg", });
-       
-        }
 
 
-        [DataRow]
-        [TestMethod]
       
-        public void UpdateExhibition(Exhibition ex)
-        {
-            //foreach (var id in ExhibitionsTest.Values)
-            //{
 
-            //    {
-            //        id.ExhibitionId = ex.ExhibitionId;
-            //        id.ExhibitionName = ex.ExhibitionName;
-            //        id.ImageName = ex.ImageName;
 
-            //    }
-
-            //}
-            ExhibitionsTest[ex.ExhibitionId] = ex;
-        }
+   
+      
+    
 
         [DataRow]
         [TestMethod]

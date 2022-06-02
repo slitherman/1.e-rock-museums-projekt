@@ -22,13 +22,13 @@ namespace _1.e_Projekt.Services
         {
 
 
-            //Giver op. Dette er den letteste måde at kunne få de 2 collections til at kommunikere med hinanden + dependency injection er også blevet muligt.
+           
                 Exhibitions = new Dictionary<int, Exhibition>();
                 Exhibitions.Add(1, new Exhibition() { ExhibitionId = 1, ExhibitionName = "Rockens opstart", ImageName="Rock" });
                 Exhibitions.Add(2, new Exhibition() { ExhibitionId = 2, ExhibitionName = "Musik før 2.Verdenskrig", ImageName="Jazz",  });
                 Exhibitions.Add(3, new Exhibition() { ExhibitionId = 3, ExhibitionName = "Protestmusikken i 60'erne", ImageName="Protest",  });
                 Exhibitions.Add(4, new Exhibition() { ExhibitionId = 4, ExhibitionName = "Stoffers indflydelse på musik" , ImageName="Woodstock", });
-            //Har fjernet presentation klassen, alle presentations er nu exhibitions
+            
             Presentations = new Dictionary<int, Exhibition>();
                 Presentations.Add(1, new Exhibition() { PresentationId = 1, PresentationName = " Oplæg Om Rockens Opstart", ImageName = "Pictures/Rock.jpg", AudioFile = "09 genome.mp3" });
                 Presentations.Add(2, new Exhibition() { PresentationId = 1, PresentationName = " Oplæg Om Musik Før 2.Verdenskrig", ImageName = "Pictures/Jazz.jpg", AudioFile = "11 tsurugi no mai.mp3" });
@@ -128,7 +128,7 @@ namespace _1.e_Projekt.Services
         {
             return Presentations[id];
         }
-        public Dictionary<int, Exhibition> GetPreentations()
+        public Dictionary<int, Exhibition> GetPresentations()
         {
             return Presentations;
         }

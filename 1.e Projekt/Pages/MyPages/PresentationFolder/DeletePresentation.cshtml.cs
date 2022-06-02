@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace _1.e_Projekt.Pages.MyPages.PresentationFolder
 {
-    [Authorize]
+    //[Authorize]
     public class DeletePresentationModel : PageModel
     {
       
@@ -25,7 +25,7 @@ namespace _1.e_Projekt.Pages.MyPages.PresentationFolder
         public IActionResult OnGet(int id)
 
         {
-            Presentation= PresentationMethods.ReadPresentation(id);
+          
             return Page();
         }
         public IActionResult OnPost(int id)

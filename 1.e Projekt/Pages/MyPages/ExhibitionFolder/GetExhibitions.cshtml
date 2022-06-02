@@ -3,7 +3,7 @@
 @{
 }
 
-<h1>  List Of Exhibitions  </h1>
+<h1>  Current Exhibitions  </h1>
 
 
 @foreach (var item in Model.ExhibitionCollection)
@@ -15,15 +15,12 @@
                 @item.Value.ExhibitionId
                 @item.Value.ExhibitionName
                 @item.Value.ImageName
-                <a asp-page="DeleteExhibitions" asp-route-id="@item.Key">remove</a>
-                <a asp-page="UpdateExhibitions" asp-route-id="@item.Key">update</a>
-                <a asp-page="" asp-route-id="@item.Key">update</a>
-                <audio controls>
-                    <source src="@item.Value.AudioFile" type="@item.Value.AudioFile" />
-                    <source src="@item.Value.AudioFile" type="@item.Value.AudioFile">
-                    Your browser does not support the audio tag.
-                </audio>
-
+              
+                <a asp-page="DeleteExhibitions" asp-route-id="@item.Key">Remove</a>
+                <a asp-page="UpdateExhibitions" asp-route-id="@item.Key">Update</a>
+              
+                <a asp-page="/MyPages/PresentationFolder/GetPresentations" >Go to Presentation</a>
+              
 
             </div>
 

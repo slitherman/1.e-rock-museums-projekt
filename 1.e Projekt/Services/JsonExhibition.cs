@@ -14,7 +14,9 @@ namespace _1.e_Projekt.Services
 
          readonly string filename = "Data/JsonExhibitions.json";
 
-      
+        readonly string filename2 = "Data/JsonPresentations.json";
+
+
 
         public void SaveToJson(Dictionary<int, Exhibition> Exhibitions)
         {
@@ -27,6 +29,18 @@ namespace _1.e_Projekt.Services
             return JsonFileReader.ReadJson(filename);
 
         }
+
+        public Dictionary<int, Exhibition> ReadToJson2()
+        {
+            return JsonFileReader.ReadJson(filename2);
+
+        }
+        public void SaveToJson2(Dictionary<int, Exhibition> Presentations)
+        {
+            JsonFileWriter.WriteToJson(Presentations, filename2);
+
+        }
+
         public Dictionary<int, Exhibition> GetExhibitions()
         {
             return ReadToJson();
@@ -48,16 +62,13 @@ namespace _1.e_Projekt.Services
         public void AddExhibition(Exhibition ex)
         {
             Dictionary<int, Exhibition> Exhibitions = GetExhibitions();
-            foreach (var ids in Exhibitions.Values.ToList())
+            if (!Exhibitions.Keys.ToList().Contains(ex.ExhibitionId))
             {
-                 if(!ids.ExhibitionId.Equals(ex.ExhibitionId))
-                {
-                    Exhibitions.Add(ex.ExhibitionId, ex);
-                    JsonFileWriter.WriteToJson(Exhibitions, filename);
-                }
+                Exhibitions.Add(ex.ExhibitionId, ex);
+                JsonFileWriter.WriteToJson(Exhibitions, filename);
             }
-         
-         
+
+
         }
        
         public void UpdateExhibition(Exhibition ex)
@@ -82,42 +93,41 @@ namespace _1.e_Projekt.Services
         }
         public void AddPresentation(Exhibition pre)
         {
-            Dictionary<int, Exhibition> Presentations = GetPreentations();
-            foreach (var ids in Presentations.Values)
+            Dictionary<int, Exhibition> Presentations = GetPresentations();
+            if (!Presentations.Keys.ToList().Contains(pre.ExhibitionId))
             {
-                if (ids.PresentationId.Equals(pre.PresentationId))
-                {
-                    Presentations.Add(pre.PresentationId, pre);
-                    JsonFileWriter.WriteToJson2(Presentations, filename);
-                }
+                Presentations.Add(pre.ExhibitionId, pre);
+                JsonFileWriter.WriteToJson2(Presentations, filename2);
             }
-
 
         }
 
         public void DeletePresentation(int id)
         {
-            Dictionary<int, Exhibition> Presentations = GetPreentations();
+            Dictionary<int, Exhibition> Presentations = GetPresentations();
             Presentations.Remove(id);
-            JsonFileWriter.WriteToJson2(Presentations, filename);
+            JsonFileWriter.WriteToJson2(Presentations, filename2);
         }
 
-        public Dictionary<int, Exhibition> GetPreentations()
+        public Dictionary<int, Exhibition> GetPresentations()
         {
-            return ReadToJson();
+            return ReadToJson2();
         }
 
         public Exhibition ReadPresentation(int id)
         {
-            Dictionary<int, Exhibition> Presentations = GetPreentations();
+            Dictionary<int, Exhibition> Presentations = GetPresentations();
+           
             Exhibition FoundPresentations = Presentations[id];
+ 
             return FoundPresentations;
+          
 
         }
 
         public void UpdatePresentation(Exhibition pre)
         {
-            Dictionary<int, Exhibition> Presentations = GetPreentations();
+            Dictionary<int, Exhibition> Presentations = GetPresentations();
             //foreach (var id in Presentations.Values)
             //{
 
@@ -132,8 +142,8 @@ namespace _1.e_Projekt.Services
 
 
 
-            //Presentations[pre.PresentationId] = pre;
-            JsonFileWriter.WriteToJson2(Presentations, filename);
+            Presentations[pre.PresentationId] = pre;
+            JsonFileWriter.WriteToJson2(Presentations, filename2);
 
 
         }

@@ -2,3 +2,27 @@
 @model _1.e_Projekt.Pages.MyPages.PresentationFolder.DeletePresentationModel
 @{
 }
+<h1>  Delete Presentation  </h1>
+<form method="post">
+
+    <dl class="row">
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Presentation.PresentationId)</dt>
+        <dd class="col-sm-2">
+            @Html.DisplayFor(model => model.Presentation.PresentationId)
+        </dd>
+    </dl>
+    <dl class="col-sm-2">
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Presentation.PresentationName)</dt>
+        <dd>
+            @Html.DisplayFor(model => model.Presentation.PresentationName)
+        </dd>
+    </dl>
+    <dl class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Presentation.ImageName)
+        <dd class="col-sm-2">
+            @Html.DisplayFor(model => model.Presentation.ImageName)
+        </dd>
+    </dl>
+    <input type="submit" value="Delete" class="btn btn-danger" />
+</form>

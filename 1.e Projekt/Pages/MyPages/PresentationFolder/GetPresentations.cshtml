@@ -4,5 +4,33 @@
 }
 
 
-<h1>  List Of Presentations  </h1>
+<h1>  Current Presentations  </h1>
 
+
+
+@foreach (var item in Model.PresentationCollection)
+{
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                @item.Value.PresentationId
+                @item.Value.PresentationName
+                @item.Value.ImageName
+                <a asp-page="DeletePresentation" asp-route-id="@item.Key">Remove</a>
+                <a asp-page="UpdatePresentation" asp-route-id="@item.Key">Update</a>
+         
+                <audio controls>
+                    <source src="@item.Value.AudioFile" type="@item.Value.AudioFile" />
+                    <source src="@item.Value.AudioFile" type="@item.Value.AudioFile">
+                    Your browser does not support the audio tag.
+                </audio>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+}
