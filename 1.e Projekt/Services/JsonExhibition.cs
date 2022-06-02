@@ -67,7 +67,7 @@ namespace _1.e_Projekt.Services
                  if(!ids.ExhibitionId.Equals(ex.ExhibitionId))
                 {
                     Exhibitions.Add(ex.ExhibitionId, ex);
-                    JsonFileWriter.WriteToJson2(Exhibitions, filename2);
+                    JsonFileWriter.WriteToJson(Exhibitions, filename);
                 }
             }
          
@@ -131,7 +131,7 @@ namespace _1.e_Projekt.Services
 
         public void UpdatePresentation(Exhibition pre)
         {
-            Dictionary<int, Exhibition> Presentations = GetPresentations();
+            Dictionary<int,Exhibition> Presentations = GetPresentations();
             //foreach (var id in Presentations.Values)
             //{
 

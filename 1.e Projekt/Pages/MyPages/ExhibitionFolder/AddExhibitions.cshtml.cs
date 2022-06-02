@@ -36,11 +36,12 @@ namespace _1.e_Projekt.Pages.MyPages
         public IActionResult OnPost()
         {
             Exhibition.AddExhibition(AddedExhibition);
+            IsExhibitionNameInUse(AddedExhibition);
             return RedirectToPage("GetExhibitions");
         }
         public JsonResult IsExhibitionNameInUse (Exhibition ex)
         {
-            string filename = "/Data/UserDatabase.json/";
+            string filename = "Data/JsonExhibitions.json";
             JsonFileReader.ReadJson(filename);
             if (ex.ExhibitionName.Contains(filename))
             {

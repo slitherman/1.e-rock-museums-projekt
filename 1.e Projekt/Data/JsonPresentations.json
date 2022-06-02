@@ -30,5 +30,13 @@
     "PresentationId": 4,
     "ImageName": "Woodstock.jpg",
     "AudioFile": "15 how you feel.mp3"
+  },
+  "0": {
+    "ExhibitionId": 0,
+    "ExhibitionName": null,
+    "PresentationName": null,
+    "PresentationId": 0,
+    "ImageName": null,
+    "AudioFile": null
   }
 }
