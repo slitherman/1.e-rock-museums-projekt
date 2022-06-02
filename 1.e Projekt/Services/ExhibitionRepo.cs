@@ -24,16 +24,16 @@ namespace _1.e_Projekt.Services
 
            
                 Exhibitions = new Dictionary<int, Exhibition>();
-                Exhibitions.Add(1, new Exhibition() { ExhibitionId = 1, ExhibitionName = "Rockens opstart", ImageName="Rock" });
-                Exhibitions.Add(2, new Exhibition() { ExhibitionId = 2, ExhibitionName = "Musik før 2.Verdenskrig", ImageName="Jazz",  });
-                Exhibitions.Add(3, new Exhibition() { ExhibitionId = 3, ExhibitionName = "Protestmusikken i 60'erne", ImageName="Protest",  });
-                Exhibitions.Add(4, new Exhibition() { ExhibitionId = 4, ExhibitionName = "Stoffers indflydelse på musik" , ImageName="Woodstock", });
+                Exhibitions.Add(1, new Exhibition() { ExhibitionId = 1, ExhibitionName = "Rockens opstart", ImageName="Rock.jpg" });
+                Exhibitions.Add(2, new Exhibition() { ExhibitionId = 2, ExhibitionName = "Musik før 2.Verdenskrig", ImageName="Jazz.jpg",  });
+                Exhibitions.Add(3, new Exhibition() { ExhibitionId = 3, ExhibitionName = "Protestmusikken i 60'erne", ImageName="Protest.jpg",  });
+                Exhibitions.Add(4, new Exhibition() { ExhibitionId = 4, ExhibitionName = "Stoffers indflydelse på musik" , ImageName="Woodstock.jpg", });
             
             Presentations = new Dictionary<int, Exhibition>();
-                Presentations.Add(1, new Exhibition() { PresentationId = 1, PresentationName = " Oplæg Om Rockens Opstart", ImageName = "Pictures/Rock.jpg", AudioFile = "09 genome.mp3" });
-                Presentations.Add(2, new Exhibition() { PresentationId = 1, PresentationName = " Oplæg Om Musik Før 2.Verdenskrig", ImageName = "Pictures/Jazz.jpg", AudioFile = "11 tsurugi no mai.mp3" });
-                Presentations.Add(3, new Exhibition() { PresentationId = 1, PresentationName = " Oplæg Om Protestmusikken i 60'erne", ImageName = "Pictures/Protest.jpg", AudioFile = "13 chambers.mp3" });
-                Presentations.Add(4, new Exhibition() { PresentationId = 1, PresentationName = " Oplæg Om Stoffers Indflydelse På Musik", ImageName = "Pictures/Woodstock.jpg", AudioFile = "15 how you feel.mp3" });
+                Presentations.Add(1, new Exhibition() { PresentationId = 1, PresentationName = " Oplæg Om Rockens Opstart", ImageName = "Rock.jpg", AudioFile = "09 genome.mp3" });
+                Presentations.Add(2, new Exhibition() { PresentationId = 1, PresentationName = " Oplæg Om Musik Før 2.Verdenskrig", ImageName = "Jazz.jpg", AudioFile = "11 tsurugi no mai.mp3" });
+                Presentations.Add(3, new Exhibition() { PresentationId = 1, PresentationName = " Oplæg Om Protestmusikken i 60'erne", ImageName = "Protest.jpg", AudioFile = "13 chambers.mp3" });
+                Presentations.Add(4, new Exhibition() { PresentationId = 1, PresentationName = " Oplæg Om Stoffers Indflydelse På Musik", ImageName = "Woodstock.jpg", AudioFile = "15 how you feel.mp3" });
             foreach (var ids in Presentations.Values)
             {
                 if(ids.PresentationId.Equals(ids.ExhibitionId))

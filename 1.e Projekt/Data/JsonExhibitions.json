@@ -1,7 +1,7 @@
 {
   "1": {
     "ExhibitionId": 1,
-    "ExhibitionName": null,
+    "ExhibitionName": "Rockens opstart",
     "PresentationName": " Oplæg Om Rockens Opstart",
     "PresentationId": 1,
     "ImageName": "Rock.jpg",
@@ -9,7 +9,7 @@
   },
   "2": {
     "ExhibitionId": 2,
-    "ExhibitionName": null,
+    "ExhibitionName": "Musik Før 2.Verdenskrig",
     "PresentationName": " Oplæg Om Musik Før 2.Verdenskrig",
     "PresentationId": 2,
     "ImageName": "Jazz.jpg",
@@ -17,7 +17,7 @@
   },
   "3": {
     "ExhibitionId": 3,
-    "ExhibitionName": null,
+    "ExhibitionName": "Protestmusikken i 60\u0027erne",
     "PresentationName": "Oplæg Om Protestmusikken i 60\u0027erne",
     "PresentationId": 3,
     "ImageName": "Protest.jpg",
@@ -25,18 +25,10 @@
   },
   "4": {
     "ExhibitionId": 4,
-    "ExhibitionName": null,
+    "ExhibitionName": "Stoffers Indflydelse På Musik",
     "PresentationName": "Oplæg Om Stoffers Indflydelse På Musik ",
     "PresentationId": 4,
     "ImageName": "Woodstock.jpg",
     "AudioFile": "15 how you feel.mp3"
-  },
-  "2423": {
-    "ExhibitionId": 2423,
-    "ExhibitionName": "fdsfdsfdsfsdsdaasd",
-    "PresentationName": null,
-    "PresentationId": 0,
-    "ImageName": "12211",
-    "AudioFile": null
   }
 }
