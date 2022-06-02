@@ -101,9 +101,9 @@ namespace _1.e_Projekt.Services
       
         public void AddPresentation(Exhibition pre)
         {
-            if (!Presentations.Keys.ToList().Contains(pre.ExhibitionId))
+            if (!Presentations.Keys.ToList().Contains(pre.PresentationId))
             {
-                Presentations.Add(pre.ExhibitionId, pre);
+                Presentations.Add(pre.PresentationId, pre);
             }
         }
       

@@ -67,7 +67,7 @@ namespace _1.e_Projekt.Services
                  if(!ids.ExhibitionId.Equals(ex.ExhibitionId))
                 {
                     Exhibitions.Add(ex.ExhibitionId, ex);
-                    JsonFileWriter.WriteToJson(Exhibitions, filename);
+                    JsonFileWriter.WriteToJson2(Exhibitions, filename2);
                 }
             }
          
@@ -97,10 +97,13 @@ namespace _1.e_Projekt.Services
         public void AddPresentation(Exhibition pre)
         {
             Dictionary<int, Exhibition> Presentations = GetPresentations();
-            if (!Presentations.Keys.ToList().Contains(pre.ExhibitionId))
+            foreach (var ids in Presentations.Values.ToList())
             {
-                Presentations.Add(pre.ExhibitionId, pre);
-                JsonFileWriter.WriteToJson2(Presentations, filename2);
+                if (!ids.PresentationId.Equals(pre.PresentationId))
+                {
+                    Presentations.Add(pre.PresentationId, pre);
+                    JsonFileWriter.WriteToJson2(Presentations, filename2);
+                }
             }
 
         }

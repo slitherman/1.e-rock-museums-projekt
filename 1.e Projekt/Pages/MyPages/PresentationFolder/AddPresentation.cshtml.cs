@@ -33,15 +33,14 @@ namespace _1.e_Projekt.Pages.MyPages.PresentationFolder
         }
         public IActionResult OnPost()
         {
-           
-
+        
             PresentationMethods.AddPresentation(Presentation);
             return RedirectToPage("GetPresentations");
         }
 
         public JsonResult IsPresentationNameTaken(Exhibition Pre)
         {
-            string filename = "/Data/UserDatabase.json/";
+            string filename = "Data/JsonPresentations.json";
             JsonFileReader.ReadJson2(filename);
 
             if (Pre.PresentationName.Contains(filename))
