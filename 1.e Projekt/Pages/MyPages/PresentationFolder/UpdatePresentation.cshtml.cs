@@ -26,9 +26,9 @@ namespace _1.e_Projekt.Pages.MyPages.PresentationFolder
             Presentation = PresentationMethods.ReadPresentation(id);
             return Page();
         }
-        public IActionResult OnPost(Exhibition pre)
+        public IActionResult OnPost()
         {
-            PresentationMethods.UpdatePresentation(pre);
+            PresentationMethods.UpdatePresentation(Presentation);
             return RedirectToPage("GetPresentations");
         }
     }

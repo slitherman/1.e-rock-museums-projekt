@@ -8,12 +8,12 @@
     "AudioFile": "09 genome.mp3"
   },
   "2": {
-    "ExhibitionId": 2,
+    "ExhibitionId": 0,
     "ExhibitionName": null,
-    "PresentationName": " Oplæg Om Musik Før 2.Verdenskrig",
+    "PresentationName": " Oplæg Om Musik Før 2.Verdenskrig ",
     "PresentationId": 2,
     "ImageName": "Jazz.jpg",
-    "AudioFile": "11 tsurugi no mai.mp3"
+    "AudioFile": null
   },
   "3": {
     "ExhibitionId": 3,
@@ -30,13 +30,5 @@
     "PresentationId": 4,
     "ImageName": "Woodstock.jpg",
     "AudioFile": "15 how you feel.mp3"
-  },
-  "0": {
-    "ExhibitionId": 0,
-    "ExhibitionName": null,
-    "PresentationName": null,
-    "PresentationId": 0,
-    "ImageName": null,
-    "AudioFile": null
   }
 }
