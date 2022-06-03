@@ -15,10 +15,17 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace _1.e_Projekt.Pages.MyPages.UserFolder
 {
+
     public class UserSignUpModel : PageModel
     {
+        [PageRemote(PageHandler = "IsEmailTaken", HttpMethod = "Get", ErrorMessage = "error email is already in use")]
+
+        [BindProperty]
+
+
+        public UserModel NewUser { get; set; }
         public IUserInterface UserMethods;
-        public UserModel NewUser;
+     
         private IConfiguration cfg;
         public UserSignUpModel(IUserInterface repo, IConfiguration _cfg)
         {
@@ -33,16 +40,11 @@ namespace _1.e_Projekt.Pages.MyPages.UserFolder
         }
         public IActionResult OnPost()
         {
-            
-           if(ModelState.IsValid)
-            {
-               UserMethods.CreateUser(NewUser);
-                var token = Generate(NewUser);
-                var validaor = IsEmailTaken(NewUser);
+            UserMethods.CreateUser(NewUser);
+            IsEmailTaken(NewUser);
+            return Page();
 
-                return Page();
-            }
-            return BadRequest(ModelState);
+       
         }
         public JsonResult IsEmailTaken(UserModel Users)
         {

@@ -24,16 +24,18 @@ namespace _1.e_Projekt.Pages.MyPages.UserFolder
     [AllowAnonymous]
     public class AddUserModel : PageModel
     {
-  
+    
 
+        readonly string filename = "./Data/JsonUsers.json";
+        [BindProperty]
+
+
+        public Users CurrentUsersNonStatic { get; set; }
+        public static Users CurrentUsers { get; set; }
         public IUserInterface UserMethods;
-        public static Users CurrentUsers;
 
         private IConfiguration cfg; 
-        [BindProperty]
-    
-        [PageRemote(PageHandler = "IsEmailTaken", HttpMethod ="Get", ErrorMessage ="error email is already in use")]
-        public UserModel AddedUsers { get; set; }
+        
         public AddUserModel(IUserInterface repo, IConfiguration _cfg)
         {
             UserMethods = repo;
@@ -52,10 +54,11 @@ namespace _1.e_Projekt.Pages.MyPages.UserFolder
                 if (user != null)
                 {
                     var token = Generate(user);
-                  
 
+                    
+                    JsonFileWriter.WriteToJson3();
 
-
+                    
                 }
                 return NotFound("User Not Found");
 
@@ -93,7 +96,7 @@ namespace _1.e_Projekt.Pages.MyPages.UserFolder
         private UserModel Authenticater(UserLogin userLogin)
         {
 
-            var CurrentUser = CurrentUsers.UserCollection.FirstOrDefault(o => o.Email.ToLower() ==
+            var CurrentUser = CurrentUsersNonStatic.UserCollection.FirstOrDefault(o => o.Email.ToLower() ==
              userLogin.Email.ToLower() && o.Password == userLogin.Password);
         
 
