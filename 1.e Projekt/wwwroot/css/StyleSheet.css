@@ -1,0 +1,72 @@
+﻿
+
+body {
+    background: #fff1fc
+}
+
+.section-padding {
+    padding:100px;
+}
+.carousel-item{
+    height: 100vh;
+    min-height:300px;
+    
+}
+.carousel-caption{
+    bottom: 220px;
+    z-index: 2;
+}
+.carousel-caption h5{
+    font-size: 50px;
+    text-transform:uppercase;
+    letter-spacing:normal;
+    margin-top: 25px;
+        
+}
+.carousel-caption p{
+    width:60%;
+    margin:auto;
+    font-size:16px;
+    line-height:2;
+}
+.carousel-inner::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+   
+}
+.navbar-nav a{
+    font-size: 15px;
+    text-transform:uppercase;
+    font-weight:500;
+
+}
+.navbar-light .navbar-brand {
+    color: deeppink;
+    font-size: 25px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.navbar-light .navbar-brand:focus,
+navbar-light .navbar-brand:hover{
+    color:black;
+
+}
+.navbar-light .navbar-nav .navbar-light {
+    color:black;
+}
+w-100 {
+    height:100vh;
+
+}
+
+.service .card-body i{
+    font-size:50px;
+
+
+}

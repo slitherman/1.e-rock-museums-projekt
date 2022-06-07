@@ -31,4 +31,11 @@
     <Folder Include="Test\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\AudioFiles\09 genome.mp3" />
+    <None Include="wwwroot\AudioFiles\11 tsurugi no mai.mp3" />
+    <None Include="wwwroot\AudioFiles\13 chambers.mp3" />
+    <None Include="wwwroot\AudioFiles\15 how you feel.mp3" />
+  </ItemGroup>
+
 </Project>

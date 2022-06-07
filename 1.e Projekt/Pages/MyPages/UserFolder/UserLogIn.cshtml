@@ -12,19 +12,19 @@
                 <div asp-validation-summary="All" class="text-danger">  </div>
               
                 <div class="mb-3">
-                    <label class="form-label" asp-for="@Model.c">Email</label>
-                    <input type="email" asp-for="@Model.AddedUsers.Email" class="form-control" />
-                    <span asp-validation-for="@Model.AddedUsers.Email" class="text-danger">  </span>
+                    <label class="form-label" asp-for="@Model.UserProps.Email">Email</label>
+                    <input type="email" asp-for="@Model.UserProps.Email" class="form-control" />
+                    <span asp-validation-for="@Model.UserProps.Email" class="text-danger">  </span>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label" asp-for="@Model.AddedUsers.Password ">Password</label>
-                    <input type="password" asp-for="@Model.AddedUsers.Password" class="form-control" />
-                    <span asp-validation-for="@Model.AddedUsers.Password" class="text-danger">  </span>
+                    <label class="form-label" asp-for="@Model.UserProps.Password ">Password</label>
+                    <input type="password" asp-for="@Model.UserProps.Password" class="form-control" />
+                    <span asp-validation-for="@Model.UserProps.Password" class="text-danger">  </span>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label" asp-for="@Model.AddedUsers.ConfirmPassword">ConfirmPassword</label>
-                    <input type="password" asp-for="@Model.AddedUsers.ConfirmPassword" class="form-control" />
-                    <span asp-validation-for="@Model.AddedUsers.ConfirmPassword" class="text-danger">  </span>
+                    <label class="form-label" asp-for="@Model.UserProps.ConfirmPassword">ConfirmPassword</label>
+                    <input type="password" asp-for="@Model.UserProps.ConfirmPassword" class="form-control" />
+                    <span asp-validation-for="@Model.UserProps.ConfirmPassword" class="text-danger">  </span>
                 </div>
                 <div class="mb-3">
                     <button type="submit" class="btn btn-primary"> Login</button>

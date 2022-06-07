@@ -20,18 +20,15 @@ using Microsoft.Extensions.Configuration;
 
 
 namespace _1.e_Projekt.Pages.MyPages.UserFolder
-{
+{   [BindProperties]
     [AllowAnonymous]
     public class AddUserModel : PageModel
     {
-    
+
 
         readonly string filename = "./Data/JsonUsers.json";
-        [BindProperty]
-
-
         public Users CurrentUsersNonStatic { get; set; }
-        public static Users CurrentUsers { get; set; }
+        public UserModel UserProps { get; set; }
         public IUserInterface UserMethods;
 
         private IConfiguration cfg; 
@@ -54,9 +51,10 @@ namespace _1.e_Projekt.Pages.MyPages.UserFolder
                 if (user != null)
                 {
                     var token = Generate(user);
+           
 
-                    
-                    JsonFileWriter.WriteToJson3();
+                    JsonFileWriter.WriteToJson4(user, filename);
+                 
 
                     
                 }

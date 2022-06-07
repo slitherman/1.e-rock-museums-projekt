@@ -82,5 +82,28 @@ namespace _1.e_Projekt.Helpers
 
 
         }
+
+        public static void WriteToJson4(UserModel Users, string filename)
+        {
+            var encoderSettings = new TextEncoderSettings();
+            encoderSettings.AllowRange(UnicodeRanges.All);
+
+            var Options = new JsonSerializerOptions
+            {
+                Encoder = JavaScriptEncoder.Create(encoderSettings),
+
+                WriteIndented = true
+            };
+
+
+            string output = JsonSerializer.Serialize(Users, Options);
+
+
+            File.WriteAllText(filename, output);
+
+
+
+
+        }
     }
 }

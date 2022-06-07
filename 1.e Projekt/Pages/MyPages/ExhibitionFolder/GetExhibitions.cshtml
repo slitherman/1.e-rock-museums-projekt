@@ -3,31 +3,49 @@
 @{
 }
 
-<h1>  Current Exhibitions  </h1>
+<div class="container ">
+    <div class="text-center my-5">
+        <h1>   Current Exhibitions   </h1>
+    </div>
+</div>
 
 
 @foreach (var item in Model.ExhibitionCollection)
 {
 
-    <div class="container">
-        <div class="row">
-            <div class="col-sm">
-                @item.Value.ExhibitionId
-                @item.Value.ExhibitionName
-                @item.Value.ImageName
-              
-                <a asp-page="DeleteExhibitions" asp-route-id="@item.Key">Remove</a>
-                <a asp-page="UpdateExhibitions" asp-route-id="@item.Key">Update</a>
-              
-                <a asp-page="/MyPages/PresentationFolder/GetPresentations" >Go to Presentation</a>
-              
-
-            </div>
-
-        </div>
-    </div>
-
    
+    
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-sm w-100 " >
+                    <div class="card mb-5 shadow-sm">
+                        <img src="~/Pictures/@item.Value.ImageName" class="img-fluid">
+
+                        <div class="card-body">
+                            <div class="card-title">
+                                <h2> @item.Value.ExhibitionName </h2>
+                            </div>
+                            <div class="card-text">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                </p>
+                            </div>
+                            <a asp-page="DeleteExhibitions" asp-route-id="@item.Key" class="btn btn-primary rounded-0 ">Remove</a>
+                            <a asp-page="UpdateExhibitions" asp-route-id="@item.Key" class="btn btn-primary rounded-0 ">Update</a>
+                            <a asp-page="AddExhibitions" asp-route-id="@item.Key" class="btn btn-primary rounded-0 ">Add</a>
+
+                            <a asp-page="/MyPages/PresentationFolder/GetPresentations" class="btn btn-primary rounded-0 ">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+   
+
+
+
 
 
 }

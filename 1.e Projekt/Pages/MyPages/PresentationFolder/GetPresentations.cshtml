@@ -3,34 +3,46 @@
 @{
 }
 
-
-<h1>  Current Presentations  </h1>
+<div class="container ">
+    <div class="text-center my-5">
+        <h1>  Current Presentations  </h1>
+    </div>
+</div>
 
 
 
 @foreach (var item in Model.PresentationCollection)
 {
 
-    <div class="container">
-        <div class="row">
-            <div class="col-sm">
-                @item.Value.PresentationId
-                @item.Value.PresentationName
-                @item.Value.ImageName
-                <a asp-page="DeletePresentation" asp-route-id="@item.Key">Remove</a>
-                <a asp-page="UpdatePresentation" asp-route-id="@item.Key">Update</a>
-         
-                <audio controls>
-                    <source src="@item.Value.AudioFile" type="@item.Value.AudioFile" />
-                    <source src="@item.Value.AudioFile" type="@item.Value.AudioFile">
-                    Your browser does not support the audio tag.
-                </audio>
-            </div>
 
+    <div class="col w-100">
+        <div class="card mb-5 shadow-sm">
+            <img src="~/Pictures/@item.Value.ImageName" class="img-fluid">
+
+            <div class="card-body">
+                <div class="card-title">
+                    <h2>  </h2>
+                </div>
+                <div class="card-text">
+                    <p>
+                        <audio controls>
+                            <source src="~/AudioFiles/@item.Value.AudioFile" type="audio/mp3">
+                            <source src="~/AudioFiles/@item.Value.AudioFile" type="audio/vnd.wave">
+                            Your browser does not support the audio tag.
+                        </audio>
+                    </p>
+                </div>
+                <a asp-page="DeletePresentation" asp-route-id="@item.Key" class="btn btn-primary rounded-0 ">Remove</a>
+                <a asp-page="UpdatePresentation" asp-route-id="@item.Key" class="btn btn-primary rounded-0 ">Update</a>
+                <a asp-page="AddPresentation" asp-route-id="@item.Key" class="btn btn-primary rounded-0 ">Add</a>
+
+
+
+            </div>
         </div>
     </div>
 
 
 
-
 }
+
