@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using _1.e_Projekt.Interfaces;
+using _1.e_Projekt.Models;
 using _1.e_Projekt.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -10,27 +11,28 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace _1.e_Projekt.Pages.MyPages
 {
-    [Authorize]
+    //[Authorize]
     public class UpdateExhibitionsModel : PageModel
     {
-        public IExhibition Exhibition;
+        public IExhibitionRepo Exhibition;
         [BindProperty]
-        private Exhibition UpdatedExhibition { get; set; }
+        public Exhibition UpdatedExhibition { get; set; }
 
-        public UpdateExhibitionsModel(IExhibition repo)
+        public UpdateExhibitionsModel(IExhibitionRepo repo)
         {
             Exhibition = repo;
         }
 
-        public IActionResult OnGet()
+        public IActionResult OnGet(int id)
         {
+            UpdatedExhibition = Exhibition.GetExhibition(id);
             return Page();
         }
 
     
-        public IActionResult OnPost(Exhibition ex)
+        public IActionResult OnPost()
         {
-            Exhibition.UpdateExhibition(ex);
+           Exhibition.UpdateExhibition(UpdatedExhibition);
             return RedirectToPage("GetExhibitions");
         }
     }

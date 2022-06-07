@@ -1,0 +1,47 @@
+{
+  "1": {
+    "FirstName": "Lachy",
+    "LastName": "Shannon",
+    "Email": "lachyshannon@gmail.com",
+    "Password": "12345",
+    "UserIcon": "Pictures/UserIcon.png",
+    "Role": "Admin",
+    "UserId": "UniqueID"
+
+
+  },
+  "2": {
+    "FirstName": "Brandon",
+    "LastName": "Mccartney",
+    "Email": "brandonmccartney@gmail.com",
+    "Password": "44443",
+    "UserIcon": "Pictures/UserIcon.png",
+    "Role": "Admin",
+    "UserId": "UniqueID"
+
+
+  },
+  "3": {
+    "FirstName": "Larry",
+    "LastName": "David",
+    "Email": "larrydavid@gmail.com",
+    "Password": "11111",
+    "UserIcon": "Pictures/UserIcon.png",
+    "Role": "User",
+    "UserId": "UniqueID"
+
+
+  },
+  "4": {
+    "FirstName": "Saloth",
+    "LastName": "Sar",
+    "Email": "PolPot@gmail.com",
+    "Password": "22222",
+    "UserIcon": "Pictures/UserIcon.png",
+    "Role": "User",
+    "UserId": "UniqueID"
+
+
+  }
+
+}

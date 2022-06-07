@@ -1,29 +1,34 @@
 {
-
   "1": {
-
-    "PresentationnId": 1,
-    "PresentationName": " Oplæg Om Rockens Opstart",
-    "ImageName": "Rock"
-
+    "ExhibitionId": 1,
+    "ExhibitionName": null,
+    "PresentationName": " OplÃ¦g Om Rockens Opstart",
+    "PresentationId": 1,
+    "ImageName": "Rock.jpg",
+    "AudioFile": "09 genome.mp3"
   },
   "2": {
-
-    "PresentationnId": 2,
-    "PresentationName": " Oplæg Om Musik Før 2.Verdenskrig",
-    "ImageName": "Jazz"
-
+    "ExhibitionId": 0,
+    "ExhibitionName": null,
+    "PresentationName": " OplÃ¦g Om Musik FÃ¸r 2.Verdenskrig ",
+    "PresentationId": 2,
+    "ImageName": "Jazz.jpg",
+    "AudioFile": "11 tsurugi no mai.mp3"
   },
   "3": {
-
-    "PresentationnId": 3,
-    "PresentationName": "Oplæg Om Protestmusikken i 60'erne",
-    "ImageName": "Protest"
-
+    "ExhibitionId": 3,
+    "ExhibitionName": null,
+    "PresentationName": "OplÃ¦g Om Protestmusikken i 60\u0027erne",
+    "PresentationId": 3,
+    "ImageName": "Protest.jpg",
+    "AudioFile": "13 chambers.mp3"
   },
   "4": {
-    "PresentationnId": 3,
-    "PresentationName": "Oplæg Om Stoffers Indflydelse På Musik ",
-    "ImageName": "."
+    "ExhibitionId": 4,
+    "ExhibitionName": null,
+    "PresentationName": "OplÃ¦g Om Stoffers Indflydelse PÃ¥ Musik ",
+    "PresentationId": 4,
+    "ImageName": "Woodstock.jpg",
+    "AudioFile": "15 how you feel.mp3"
   }
 }

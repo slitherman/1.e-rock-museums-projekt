@@ -1,0 +1,30 @@
+﻿@page
+@model _1.e_Projekt.Pages.MyPages.AddExhibitionsModel
+@{
+}
+<h1>  Add An Exhibition  </h1>
+<div class="row">
+    <div class="col-md-3">
+        <form  method="post">
+            <div class=" form-group">
+                <label asp-for="@Model.AddedExhibition.ExhibitionId" class="control-label"> </label>
+                <input asp-for="@Model.AddedExhibition.ExhibitionId" class=" form-control">
+                <span asp-validation-for="@Model.AddedExhibition.ExhibitionId" class=" text-danger">  </span>
+            </div>
+            <div class=" form-group">
+                <label asp-for="@Model.AddedExhibition.ExhibitionName" class="control-label">  </label>
+                <input asp-for="@Model.AddedExhibition.ExhibitionName" class="form-control">
+                <span asp-validation-for="@Model.AddedExhibition.ExhibitionName" class=" text-danger">  </span>
+            </div>
+            <div class=" form-group">
+                <label asp-for="@Model.AddedExhibition.ImageName" class="control-label">  </label>
+                <input asp-for="@Model.AddedExhibition.ImageName" class="form-control">
+                <span asp-validation-for="@Model.AddedExhibition.ImageName" class=" text-danger">  </span>
+
+                <div class="form-group">
+                    <input type="submit" value="Create" class=" btn btn-primary" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
